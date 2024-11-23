@@ -19,6 +19,8 @@
 
  */
 
+#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
+#undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
@@ -95,43 +97,43 @@
         compatible = "zmk,combos";
         combo_under {
             timeout-ms = <50>;
-            key-positions = <21 34>;
+            key-positions = <23 37>;
             bindings = <&kp UNDER>;
             layers = <COLEMAK>;
         };
         combo_minus {
             timeout-ms = <50>;
-            key-positions = <20 21>;
+            key-positions = <22 23>;
             bindings = <&kp MINUS>;
             layers = <COLEMAK>;
         };
         combo_sqt {
             timeout-ms = <50>;
-            key-positions = <9 22>;
+            key-positions = <9 24>;
             bindings = <&kp SQT>;
             layers = <COLEMAK>;
         };
         combo_dqt {
             timeout-ms = <50>;
-            key-positions = <10 23>;
+            key-positions = <10 25>;
             bindings = <&kp DQT>;
             layers = <COLEMAK>;
         };
         combo_colon {
             timeout-ms = <50>;
-            key-positions = <17 30>;
+            key-positions = <17 32>;
             bindings = <&kp COLON>;
             layers = <COLEMAK>;
         };
         combo_semi {
             timeout-ms = <50>;
-            key-positions = <16 29>;
+            key-positions = <16 31>;
             bindings = <&kp SEMI>;
             layers = <COLEMAK>;
         };
         combo_excl {
             timeout-ms = <50>;
-            key-positions = <24 37>;
+            key-positions = <26 40>;
             bindings = <&kp EXCL>;
             layers = <COLEMAK>;
         };
