@@ -22,13 +22,58 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
+#define COLEMAK 0
+#define MEDIA   1
+#define SYMBOLS 2
+#define EXTEND  3
+#define NAV     4
+#define SYSTEM  5
+
 / {
     behaviors {
+        hrl: home_row_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_RIGHT KEYS_THUMBS KEYS_5WAY>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        hrr: home_row_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_LEFT KEYS_THUMBS KEY_ENCODER>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
+
+        comm_grv: comma_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp GRAVE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_tld: dot_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -45,16 +90,80 @@
         tap-ms = <30>;
     };
 
+
+    combos {
+        compatible = "zmk,combos";
+        combo_under {
+            timeout-ms = <50>;
+            key-positions = <21 34>;
+            bindings = <&kp UNDER>;
+            layers = <COLEMAK>;
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp MINUS>;
+            layers = <COLEMAK>;
+        };
+        combo_sqt {
+            timeout-ms = <50>;
+            key-positions = <9 22>;
+            bindings = <&kp SQT>;
+            layers = <COLEMAK>;
+        };
+        combo_dqt {
+            timeout-ms = <50>;
+            key-positions = <10 23>;
+            bindings = <&kp DQT>;
+            layers = <COLEMAK>;
+        };
+        combo_colon {
+            timeout-ms = <50>;
+            key-positions = <17 30>;
+            bindings = <&kp COLON>;
+            layers = <COLEMAK>;
+        };
+        combo_semi {
+            timeout-ms = <50>;
+            key-positions = <16 29>;
+            bindings = <&kp SEMI>;
+            layers = <COLEMAK>;
+        };
+        combo_excl {
+            timeout-ms = <50>;
+            key-positions = <24 37>;
+            bindings = <&kp EXCL>;
+            layers = <COLEMAK>;
+        };
+        combo_save {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp LC(S)>;
+            layers = <COLEMAK>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "COLEMAK";
+
+            // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
+            // │ ESC  │  Q  │  W  │  F  │  P  │  B  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │ TAB  │  A  │  R  │  S  │  T  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │ ENT  │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │ CTRL │  Z  │  X  │  C  │  D  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │  '   │
+            // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴───┐━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
+            //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
+            //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
+
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                             &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
+&kp ESC    &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
+&kp TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O &kp ENTER
+&kp LCTRL  &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &kp SQT
+                                                  &kp LGUI  &mo 1  &lt 3 SPACE                                   &lt 3 ENTER  &mo 2  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
