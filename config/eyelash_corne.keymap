@@ -31,6 +31,12 @@
 #define NAV     4
 #define SYSTEM  5
 
+#define KEYS_LEFT     0  1  2  3  4  5 13 14 15 16 17 18 28 29 30 31 32 33 // left-hand keys
+#define KEYS_RIGHT    7  8  9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 // right-hand keys
+#define KEYS_THUMBS  42 43 44 45 46 47                                     // thumb keys
+#define KEYS_5WAY     6 19 20 21 35                                        // five-way switch
+#define KEY_ENCODER  34                                                    // push on rotary encoder
+
 / {
     behaviors {
         hrl: home_row_left {
