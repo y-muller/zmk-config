@@ -192,10 +192,10 @@
             bindings = <
 &kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none         &kp F5                          &kp UP                 &none        &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none       &kp PG_UP    
 &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp LC(PLUS) &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp UP      &kp PG_DN
-&none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE            &kp DOWN               &kp LC(MINUS) &mkp MCLK      &none          &kp LEFT        &kp DOWN    &kp RIGHT
+&none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE            &kp DOWN               &kp LC(MINUS) &mkp MCLK     &none          &kp LEFT        &kp DOWN    &kp RIGHT
                                                   &trans   &trans  &trans                                          &kp HOME   &trans  &kp END
             >;
-            sensor-bindings = <&inc_dec_kp C_VOLUkp TABME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
