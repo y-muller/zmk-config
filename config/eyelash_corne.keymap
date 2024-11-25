@@ -180,20 +180,20 @@
             display-name = "MEDIA";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │ ESC  │MUTE │VOL- │VOL+ │ MIC │ F5  │                ┃  ↑  ┃         │     │ mL  │ m↑  │ mR  │     │ PGUP │
+            // │ ESC  │MUTE │VOL- │VOL+ │ MIC │ F5  │                ┃ s↑  ┃         │     │ mL  │ m↑  │ mR  │     │ PGUP │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │     │BRI- │BRI+ │DISP │     │          ┃  ←  ┃enter┃  →  ┃   │ZOOM+│ m←  │ m↓  │ m→  │  ↑  │ PGDN │
+            // │      │     │BRI- │BRI+ │DISP │     │          ┃ s←  ┃enter┃ s→  ┃   │ZOOM+│ m←  │ m↓  │ m→  │  ↑  │ PGDN │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │PLAY │STOP │PREV │NEXT │     │ ┃MUTE┃         ┃  ↓  ┃         │ZOOM-│ mM  │     │  ←  │  ↓  │  →   │
+            // │      │PLAY │STOP │PREV │NEXT │     │ ┃MUTE┃         ┃ s↓  ┃         │ZOOM-│ mM  │     │  ←  │  ↓  │  →   │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
-            //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │I
+            //                        │ GUI │ SFT │ SPC │                        │HOME │ SPC │ END │I
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none         &kp F5                          &kp UP                 &kp J        &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none       &kp PG_UP
-&none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp UP      &kp PG_DN
-&none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE            &kp DOWN               &kp K        &mkp CLK       &none          &kp LEFT        &kp DOWN    &kp RIGHT
-                                                  &trans   &trans  &trans                                        &lt 3 ENTER  &mo 2  &kp RALT
+&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none         &kp F5                          &kp UP                 &none        &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none       &kp PG_UP    
+&none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp LC(PLUS) &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp UP      &kp PG_DN
+&none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE            &kp DOWN               &kp LC(MINUS) &mkp MCLK      &none          &kp LEFT        &kp DOWN    &kp RIGHT
+                                                  &trans   &trans  &trans                                          &kp HOME   &trans  &kp END
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUkp TABME_UP C_VOLUME_DOWN>;
         };
