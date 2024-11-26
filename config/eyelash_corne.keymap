@@ -37,6 +37,15 @@
 #define KEYS_5WAY     6 19 20 21 35                                        // five-way switch
 #define KEY_ENCODER  34                                                    // push on rotary encoder
 
+#define U_MS_U &mmv MOVE_UP
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
+#define U_WH_U &msc SCRL_UP
+#define U_WH_D &msc SCRL_DOWN
+#define U_WH_L &msc SCRL_LEFT
+#define U_WH_R &msc SCRL_RIGHT
+
 / {
     behaviors {
         hrl: home_row_left {
@@ -190,9 +199,9 @@
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none         &kp F5                          &kp UP                 &none        &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none       &kp PG_UP    
-&none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp LC(PLUS) &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp UP      &kp PG_DN
-&none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE            &kp DOWN               &kp LC(MINUS) &mkp MCLK     &none          &kp LEFT        &kp DOWN    &kp RIGHT
+&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none         &kp F5                          &msc SCRL_UP           &none        &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none       &kp PG_UP    
+&none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 &msc SCRL_LEFT  &kp ENTER  &msc SCRL_RIGHT   &kp LC(PLUS) &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp UP      &kp PG_DN
+&none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE            &msc SCRL_DOWN               &kp LC(MINUS) &mkp MCLK     &none          &kp LEFT        &kp DOWN    &kp RIGHT
                                                   &trans   &trans  &trans                                          &kp HOME   &trans  &kp END
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;

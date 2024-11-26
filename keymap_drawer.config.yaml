@@ -136,7 +136,8 @@ parse_config:
     # Home rows
     "&hm LEFT_GUI A":
       tap: 'A'
-      shifted: $$mdi:apple-keyboard-command$$
+      #shifted: $$mdi:apple-keyboard-command$$
+      shifted: "Super"
     "&hm LEFT_ALT S":
       tap: 'S'
       shifted: $$mdi:apple-keyboard-option$$
@@ -206,7 +207,8 @@ parse_config:
 
     # Empty
     "&none":
-      tap: $$mdi:minus-circle-outline$$
+      #tap: $$mdi:minus-circle-outline$$
+      tap: ""
       type: none
 
     # Whitespace
