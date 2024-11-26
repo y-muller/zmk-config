@@ -184,7 +184,7 @@
 MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 &kp TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
 LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
-                                                  &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
+                                                  &kp LGUI  &kp LSHIFT &mo EXTEND                                &lt 3 ENTER  &kp SPACE  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -219,7 +219,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │ TAB  │  A  │  1  │  2  │  3  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │ ENT  │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │CTL/SP│  Z  │  4  │  5  │  6  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │Alt/' │
+            // │CTL/SP│  Z  │  4  │  5  │  6  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │ Comp │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
@@ -227,32 +227,32 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             bindings = <
 MEDIA_ESC  &kp Q        &kp N7       &kp N8        &kp N9        &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 &kp TAB    &hrl LGUI A  &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
-LCTRL_LGUI &kp Z        &kp N4       &kp N5        &kp N6        &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
+LCTRL_LGUI &kp Z        &kp N4       &kp N5        &kp N6        &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &kp RGUI
                                                   &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        lower_layer {
-            display-name = "NUMBER";
-            bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                        &mmv MOVE_UP                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                         &kp INS          &kp DEL          &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
+        extend_layer {
+            display-name = "EXTEND";
 
-        raise_layer {
-            display-name = "SYMBOL";
+            // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
+            // │ ESC  │  Q  │  W  │  F  │  P  │  B  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │ TAB  │  A  │  R  │  S  │  T  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │ ENT  │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │CTL/SP│  Z  │  X  │  C  │  D  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │Alt/' │
+            // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
+            //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
+            //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
+
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                           &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5  &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans     &trans     &kp SPACE                                                            &kp RET    &trans     &trans
+&none       &kp ESC      &kp LC(W)    &kp LC(F)     &none         &kp INS                         &kp UP                 &kp HOME     &kp PGUP      &kp UP       &kp PGDN   &none       &kp DEL
+&kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp END      &kp LEFT      &kp DOWN     &kp RIGHT  &kp BSPC    MEDIA_ENT
+&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &kp LS(TAB)  &kp TAB       &none        &dot_tld   &kp DEL     &kp F17
+                                                  &trans   &trans  &trans                                     &trans   &trans  &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_3 {

@@ -363,34 +363,24 @@ parse_config:
     # Numbers
     N1:
       tap: 1
-      shifted: "!"
     N2:
       tap: 2
-      shifted: "@"
     N3:
       tap: 3
-      shifted: "#"
     N4:
       tap: 4
-      shifted: "$"
     N5:
       tap: 5
-      shifted: "%"
     N6:
       tap: 6
-      shifted: "^"
     N7:
       tap: 7
-      shifted: "&"
     N8:
       tap: 8
-      shifted: "*"
     N9:
       tap: 9
-      shifted: "("
-    N0:
+t    N0:
       tap: 0
-      shifted: ")"
 
     # Modifiers
     LCTRL: $$mdi:apple-keyboard-control$$
