@@ -53,7 +53,7 @@ layers:
   - $$mdi:volume-off$$
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
-  - {type: none}
+  - F20
   - F5
   - $$mdi:pan-up$$
   - {type: none}
