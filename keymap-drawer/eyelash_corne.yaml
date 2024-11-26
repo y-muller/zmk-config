@@ -53,7 +53,7 @@ layers:
   - $$mdi:volume-off$$
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
-  - F20
+  - MIC
   - F5
   - $$mdi:pan-up$$
   - {type: none}
@@ -174,21 +174,21 @@ layers:
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:keyboard-return$$', h: MEDIA}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: none}
-  - Ctl+ Z
-  - Ctl+ X
+  - UNDO
+  - CUT
   - Ctl+ C
-  - Ctl+ V
+  - REDO
   - Ctl+ Y
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:keyboard-tab-reverse$$
   - $$mdi:keyboard-tab$$
   - {type: none}
-  - {t: ., s: '~'}
+  - {type: none}
   - $$mdi:backspace-reverse-outline$$
-  - F17
+  - GNOME
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
@@ -225,10 +225,10 @@ layers:
   - Gui+ F4
   - Ctl+ PGUP
   - {type: none}
-  - Ctl+ Z
-  - Ctl+ X
+  - UNDO
+  - CUT
   - Ctl+ C
-  - Ctl+ V
+  - REDO
   - Ctl+ Y
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
