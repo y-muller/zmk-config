@@ -29,7 +29,7 @@
 #define SYMBOLS 2
 #define EXTEND  3
 #define NAV     4
-#define SYSTEM  5
+#define FUNC    5
 
 #define KEYS_LEFT     0  1  2  3  4  5 13 14 15 16 17 18 28 29 30 31 32 33 // left-hand keys
 #define KEYS_RIGHT    7  8  9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 // right-hand keys
@@ -48,6 +48,7 @@
 
 #define MEDIA_ESC &lt MEDIA ESC
 #define MEDIA_ENT &lt MEDIA ENTER
+#define EXT_TAB &lt EXTEND TAB
 #define LCTRL_LGUI &mt LCTRL LGUI
 #define TAB_L &kp LC(LA(PG_UP))
 #define TAB_R &kp LC(LA(PG_DN))
@@ -173,20 +174,20 @@
             display-name = "COLEMAK";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │ ESC  │  Q  │  W  │  F  │  P  │  B  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
+            // │MD/ESC│  Q  │  W  │  F  │  P  │  B  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ TAB  │  A  │  R  │  S  │  T  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │ ENT  │
+            // │EX/TAB│  A  │  R  │  S  │  T  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │MD/ENT│
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │CTL/SP│  Z  │  X  │  C  │  D  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │Alt/' │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
-            //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
+            //                        │ NAV │ SFT │ EXT │                        │ SYM │ SPC │ Fn  │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
 MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
-&kp TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
+EXT_TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
 LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
-                                                  &kp LGUI  &kp LSHIFT &mo EXTEND                                &lt 3 ENTER  &kp SPACE  &kp RALT
+                                                  &mo NAV  &kp LSHIFT &mo EXTEND                                &mo SYMBOLS  &kp SPACE  &mo FUNC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -217,19 +218,19 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "SYMBOLS";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │ ESC  │  Q  │  7  │  8  │  9  │  B  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
+            // │  x   │  >  │  7  │  8  │  9  │  @  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ TAB  │  A  │  1  │  2  │  3  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │ ENT  │
+            // │ TAB  │  .  │  1  │  2  │  3  │  #  │          ┃  ←  ┃enter┃  →  ┃   │  =  │  -  │  +  │  /  │  *  │ ENT  │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │CTL/SP│  Z  │  4  │  5  │  6  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │ Comp │
+            // │      │  <  │  4  │  5  │  6  │  $  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │ Comp │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-MEDIA_ESC  &kp Q        &kp N7       &kp N8        &kp N9        &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
-&kp TAB    &hrl LGUI A  &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
-LCTRL_LGUI &kp Z        &kp N4       &kp N5        &kp N6        &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &kp RGUI
+&kp X      &kp GT        &kp N7       &kp N8        &kp N9        &kp AT                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
+&kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
+&none      &kp LT        &kp N4       &kp N5        &kp N6        &kp DOLLAR  &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &kp RGUI
                                                   &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -275,6 +276,28 @@ LCTRL_LGUI &kp Z        &kp N4       &kp N5        &kp N6        &kp V      &kp 
 &kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &none      &kp LG(F1)    &kp LG(F2)   &kp LG(F3) &kp LG(F4)  &kp LC(PGUP)
 &none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &none      TAB_L         TAB_R        &none      &none       &kp LC(PGDN)
                                                   &trans   &trans  &trans                                     &kp LA(LEFT) &trans  &kp LA(RIGHT)
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        func_layer {
+            display-name = "FUNC";
+
+            // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
+            // │ ESC  │  Q  │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │     │     │     │     │     │      │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │ TAB  │  A  │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │      │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │CTL/SP│  Z  │ F4  │ F5  │ F6  │ F10 │ ┃MUTE┃         ┃  ↓  ┃         │     │     │     │     │     │      │
+            // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
+            //                        │     │     │     │                        │     │     │     │
+            //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
+
+            bindings = <
+&none       &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &none      &none         &none        &none      &none       &none
+&none       &none        &kp F1       &kp F2        &kp F3        &kp F11             &kp LEFT  &kp ENTER  &kp RIGHT   &none      &none         &none        &none      &none       &none
+&none       &none        &kp F4       &kp F5        &kp F6        &kp F10  &kp SPACE            &kp DOWN               &none      &none         &none        &none      &none       &none
+                                                  &trans   &trans  &trans                                     &trans   &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
