@@ -49,8 +49,8 @@
 #define MEDIA_ESC &lt MEDIA ESC
 #define MEDIA_ENT &lt MEDIA ENTER
 #define LCTRL_LGUI &mt LCTRL LGUI
-#define TAB_L LC(LA(PGUP))
-#define TAB_R LC(LA(PGDN))
+#define TAB_L LC(LA(PG_UP))
+#define TAB_R LC(LA(PG_DN))
 
 / {
     behaviors {
