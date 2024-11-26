@@ -250,8 +250,8 @@ LCTRL_LGUI &kp Z        &kp N4       &kp N5        &kp N6        &kp V      &kp 
 
             bindings = <
 &none       &kp ESC      &kp LC(W)    &kp LC(F)     &none         &kp INS                         &kp UP                 &kp HOME     &kp PGUP      &kp UP       &kp PGDN   &none       &kp DEL
-&kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp END      &kp LEFT      &kp DOWN     &kp RIGHT  &kp BSPC    MEDIA_ENT
-&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &kp LS(TAB)  &kp TAB       &none        &dot_tld   &kp DEL     &kp F17
+&kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp END      &kp LEFT      &kp DOWN     &kp RIGHT  &kp BSPC    &kp ENTER
+&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &kp LS(TAB)  &kp TAB       &none        &none      &kp DEL     &kp F17
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;

@@ -382,6 +382,10 @@ parse_config:
     N0:
       tap: 0
 
+    # Misc
+    F17: "GNOME"
+    F20: "MIC"
+
     # Modifiers
     LCTRL: $$mdi:apple-keyboard-control$$
     LEFT_CONTROL: $$mdi:apple-keyboard-control$$
@@ -480,6 +484,12 @@ parse_config:
     C_AL_LOCK: $$mdi:lock$$
     K_CANCEL: $$mdi:close-box$$
     K_FIND: $$mdi:apple-finder$$
+    # Control + 
+    LC(Z): "UNDO"
+    LC(X): "CUT"
+    LC(5): "COPY"
+    LC(D): "PASTE"
+    LC(V): "REDO"
     # Command + 
     LG(A):
       tap: 'A'
