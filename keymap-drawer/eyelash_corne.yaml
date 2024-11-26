@@ -13,7 +13,7 @@ layers:
   - Y
   - {t: ;, s: ':'}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:keyboard-tab$$', h: EXTEND}
   - {t: A, h: LGUI}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
   - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
@@ -42,18 +42,18 @@ layers:
   - {t: ., s: '~'}
   - {t: /, s: '?'}
   - {t: '''', h: '$$mdi:apple-keyboard-option$$', s: '"'}
-  - LGUI
+  - NAV
   - $$mdi:apple-keyboard-shift$$
   - EXTEND
-  - {t: '$$mdi:keyboard-return$$', h: EXTEND}
+  - SYMBOLS
   - $$mdi:keyboard-space$$
-  - $$mdi:apple-keyboard-option$$
+  - FUNC
   MEDIA:
   - {t: '$$mdi:keyboard-esc$$', type: held}
   - $$mdi:volume-off$$
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
-  - MIC
+  - $$mdi:microphone-off$$
   - F5
   - $$mdi:pan-up$$
   - {type: none}
@@ -98,12 +98,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - END
   SYMBOLS:
-  - {t: '$$mdi:keyboard-esc$$', h: MEDIA}
-  - Q
+  - X
+  - '>'
   - '7'
   - '8'
   - '9'
-  - B
+  - '@'
   - $$mdi:arrow-up-bold$$
   - J
   - L
@@ -112,11 +112,11 @@ layers:
   - {t: ;, s: ':'}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - {t: A, h: LGUI}
+  - {t: ., h: LGUI, s: '>'}
   - {t: '1', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '2', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '3', h: '$$mdi:apple-keyboard-control$$'}
-  - G
+  - '#'
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
@@ -126,12 +126,12 @@ layers:
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
   - {t: O, h: LGUI}
   - {t: '$$mdi:keyboard-return$$', h: MEDIA}
-  - {t: LGUI, h: '$$mdi:apple-keyboard-control$$'}
-  - Z
+  - {type: none}
+  - <
   - '4'
   - '5'
   - '6'
-  - V
+  - $
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
   - K
@@ -143,7 +143,7 @@ layers:
   - LGUI
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: EXTEND}
-  - {t: '$$mdi:keyboard-return$$', h: EXTEND}
+  - {t: '$$mdi:keyboard-return$$', h: EXTEND, type: held}
   - $$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-option$$
   EXTEND:
@@ -160,7 +160,7 @@ layers:
   - PGDN
   - {type: none}
   - $$mdi:backspace-reverse-outline$$
-  - Alt+ $$mdi:keyboard-tab$$
+  - {t: 'Alt+ $$mdi:keyboard-tab$$', type: held}
   - {t: LGUI, h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
@@ -178,9 +178,9 @@ layers:
   - {type: none}
   - UNDO
   - CUT
-  - Ctl+ C
+  - COPY
+  - PASTE
   - REDO
-  - Ctl+ Y
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:keyboard-tab-reverse$$
@@ -191,7 +191,7 @@ layers:
   - GNOME
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {type: held alternate}
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -219,17 +219,17 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
   - {type: none}
-  - Gui+ F1
-  - Gui+ F2
-  - Gui+ F3
-  - Gui+ F4
+  - Wsp 1
+  - Wsp 2
+  - Wsp 3
+  - Wsp 4
   - Ctl+ PGUP
   - {type: none}
   - UNDO
   - CUT
-  - Ctl+ C
+  - COPY
+  - PASTE
   - REDO
-  - Ctl+ Y
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
   - {type: none}
@@ -238,12 +238,61 @@ layers:
   - {type: none}
   - {type: none}
   - Ctl+ PGDN
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - Alt+ $$mdi:arrow-left-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
   - Alt+ $$mdi:arrow-right-bold$$
+  FUNC:
+  - {type: none}
+  - {type: none}
+  - F7
+  - F8
+  - F9
+  - F12
+  - $$mdi:arrow-up-bold$$
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - F1
+  - F2
+  - F3
+  - F11
+  - $$mdi:arrow-left-bold$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:arrow-right-bold$$
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - F4
+  - F5
+  - F6
+  - F10
+  - $$mdi:keyboard-space$$
+  - $$mdi:arrow-down-bold$$
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   Fn:
   - {t: '$$mdi:transfer$$', type: trans}
   - F1
