@@ -1,6 +1,6 @@
 layers:
   COLEMAK:
-  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:keyboard-esc$$', h: MEDIA}
   - Q
   - W
   - F
@@ -27,8 +27,8 @@ layers:
   - {t: E, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
   - {t: O, h: LGUI}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:keyboard-return$$', h: MEDIA}
+  - {t: LGUI, h: '$$mdi:apple-keyboard-control$$'}
   - Z
   - X
   - C
@@ -41,15 +41,15 @@ layers:
   - {t: ',', s: '`'}
   - {t: ., s: '~'}
   - {t: /, s: '?'}
-  - {t: '''', s: '"'}
+  - {t: '''', h: '$$mdi:apple-keyboard-option$$', s: '"'}
   - LGUI
-  - MEDIA
-  - {t: '$$mdi:keyboard-space$$', h: SYMBOL}
-  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
-  - NUMBER
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
+  - {t: '$$mdi:keyboard-return$$', h: NUMBER}
+  - $$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-option$$
   MEDIA:
-  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:keyboard-esc$$', type: held}
   - $$mdi:volume-off$$
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
@@ -76,7 +76,7 @@ layers:
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - $$mdi:arrow-up-bold$$
-  - PG DN
+  - {t: PG DN, type: held alternate}
   - {type: none}
   - PLAY
   - STOP
@@ -92,11 +92,60 @@ layers:
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - HOME
   - {t: '$$mdi:transfer$$', type: trans}
   - END
+  SYMBOLS:
+  - {t: '$$mdi:keyboard-esc$$', h: MEDIA}
+  - Q
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - B
+  - $$mdi:arrow-up-bold$$
+  - J
+  - L
+  - U
+  - Y
+  - {t: ;, s: ':'}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-tab$$
+  - {t: A, h: LGUI}
+  - {t: '1', h: '$$mdi:apple-keyboard-option$$', s: '!'}
+  - {t: '2', h: '$$mdi:apple-keyboard-shift$$', s: '@'}
+  - {t: '3', h: '$$mdi:apple-keyboard-control$$', s: '#'}
+  - G
+  - $$mdi:arrow-left-bold$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:arrow-right-bold$$
+  - M
+  - {t: N, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: O, h: LGUI}
+  - {t: '$$mdi:keyboard-return$$', h: MEDIA}
+  - {t: LGUI, h: '$$mdi:apple-keyboard-control$$'}
+  - Z
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - V
+  - $$mdi:keyboard-space$$
+  - $$mdi:arrow-down-bold$$
+  - K
+  - H
+  - {t: ',', s: '`'}
+  - {t: ., s: '~'}
+  - {t: /, s: '?'}
+  - {t: '''', h: '$$mdi:apple-keyboard-option$$', s: '"'}
+  - LGUI
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
+  - {t: '$$mdi:keyboard-return$$', h: NUMBER}
+  - $$mdi:keyboard-space$$
+  - $$mdi:apple-keyboard-option$$
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
@@ -142,9 +191,9 @@ layers:
   - PG DN
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - INS
-  - {t: '$$mdi:backspace-reverse-outline$$', type: held}
+  - {type: held}
+  - {t: INS, type: held alternate}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   SYMBOL:
   - {t: '$$mdi:transfer$$', type: trans}
@@ -191,8 +240,8 @@ layers:
   - '~'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:keyboard-space$$', type: held}
-  - {t: '$$mdi:keyboard-return$$', type: held alternate}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   Fn:
