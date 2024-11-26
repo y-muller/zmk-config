@@ -46,6 +46,10 @@
 #define U_WH_L &msc SCRL_LEFT
 #define U_WH_R &msc SCRL_RIGHT
 
+#define MEDIA_ESC &lt MEDIA ESC
+#define MEDIA_ENT &lt MEDIA ENTER
+#define LCTRL_LGUI &mt LCTRL LGUI
+
 / {
     behaviors {
         hrl: home_row_left {
@@ -171,16 +175,16 @@
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │ TAB  │  A  │  R  │  S  │  T  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │ ENT  │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ CTRL │  Z  │  X  │  C  │  D  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │  '   │
+            // │CTL/SP│  Z  │  X  │  C  │  D  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │Alt/' │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp ESC    &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
-&kp TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O &kp ENTER
-&kp LCTRL  &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &kp SQT
-                                                  &kp LGUI  &mo 1  &lt 3 SPACE                                   &lt 3 ENTER  &mo 2  &kp RALT
+MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
+&kp TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
+LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
+                                                  &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -203,6 +207,28 @@
 &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 U_WH_L  &kp ENTER  U_WH_R  &kp LC(PLUS)  U_MS_L       U_MS_D      U_MS_R       &kp UP      &kp PG_DN
 &none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE          U_WH_D             &kp LC(MINUS) &mkp MCLK    &none       &kp LEFT     &kp DOWN    &kp RIGHT
                                                   &trans   &trans  &trans                                     &kp HOME   &trans  &kp END
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        symbols_layer {
+            display-name = "SYMBOLS";
+
+            // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
+            // │ ESC  │  Q  │  7  │  8  │  9  │  B  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │ TAB  │  A  │  1  │  2  │  3  │  G  │          ┃  ←  ┃enter┃  →  ┃   │  M  │  N  │  E  │  I  │  O  │ ENT  │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │CTL/SP│  Z  │  4  │  5  │  6  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │Alt/' │
+            // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
+            //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
+            //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
+
+            bindings = <
+MEDIA_ESC  &kp Q        &kp N7       &kp N8        &kp N9        &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
+&kp TAB    &hrl LGUI A  &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
+LCTRL_LGUI &kp Z        &kp N4       &kp N5        &kp N6        &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
+                                                  &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
