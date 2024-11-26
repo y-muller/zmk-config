@@ -379,7 +379,7 @@ parse_config:
       tap: 8
     N9:
       tap: 9
-t    N0:
+    N0:
       tap: 0
 
     # Modifiers

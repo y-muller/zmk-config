@@ -49,6 +49,8 @@
 #define MEDIA_ESC &lt MEDIA ESC
 #define MEDIA_ENT &lt MEDIA ENTER
 #define LCTRL_LGUI &mt LCTRL LGUI
+#define TAB_L LC(LA(PGUP))
+#define TAB_R LC(LA(PGDN))
 
 / {
     behaviors {
@@ -251,6 +253,28 @@ LCTRL_LGUI &kp Z        &kp N4       &kp N5        &kp N6        &kp V      &kp 
 &kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp END      &kp LEFT      &kp DOWN     &kp RIGHT  &kp BSPC    MEDIA_ENT
 &none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &kp LS(TAB)  &kp TAB       &none        &dot_tld   &kp DEL     &kp F17
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+
+            // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
+            // │ ESC  │  Q  │  W  │  F  │  P  │  B  │                ┃  ↑  ┃         │     │Alt-1│Alt-2│Alt-3│Alt-4│      │
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │ TAB  │  A  │  R  │  S  │  T  │  G  │          ┃  ←  ┃enter┃  →  ┃   │     │Wksp1│Wksp2│Wkrp3│Wksp4│C-PGUP│
+            // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
+            // │CTL/SP│  Z  │  X  │  C  │  D  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │     │T Lft│T Rgt│     │     │C-PGDN│
+            // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
+            //                        │ GUI │ SFT │ SPC │                        │Alt ←│ SPC │Alt →│
+            //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
+
+            bindings = <
+&none       &kp ESC      &kp LC(W)    &kp LC(F)     &none         &kp INS                         &kp UP                 &none      &kp LA(N1)    &kp LA(N2)   &kp LA(N3) &kp LA(N4)  &none
+&kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &none      &kp LG(F1)    &kp LG(F2)   &kp LG(F3) &kp LG(F4)  &kp LC(PGUP)
+&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &none      TAB_L         TAB_R        &none      &none       &kp LC(PGDN)
+                                                  &trans   &trans  &trans                                     &kp LA(LEFT) &trans  &kp LA(RIGHT)
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
