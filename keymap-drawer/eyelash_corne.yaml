@@ -138,7 +138,7 @@ layers:
   - H
   - {t: ',', s: '`'}
   - {t: ., s: '~'}
-  - {t: '|', s: QUEST}
+  - {t: '|', s: '?'}
   - RGUI
   - LGUI
   - $$mdi:apple-keyboard-shift$$
