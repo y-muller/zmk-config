@@ -136,8 +136,8 @@ layers:
   - $$mdi:arrow-down-bold$$
   - {t: '!', s: \}
   - _
-  - '&LBKT'
-  - '&RBKT'
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
   - {t: '|', s: '?'}
   - RGUI
   - {t: ▽, type: trans}
@@ -199,9 +199,9 @@ layers:
   - {type: none}
   - Ctl+Gui+ O
   - Ffox
-  - Ctl+Gui+ F
-  - Ctl+Gui+ L
-  - Ctl+Gui+ J
+  - Files
+  - Code L.
+  - Joplin
   - $$mdi:arrow-up-bold$$
   - {type: none}
   - Alt+ 1
@@ -210,11 +210,11 @@ layers:
   - Alt+ 4
   - {type: none}
   - Alt+ $$mdi:keyboard-tab$$
-  - Ctl+Gui+ A
-  - Ctl+Gui+ Y
-  - Ctl+Gui+ S
-  - Ctl+Gui+ B
-  - Ctl+Gui+ T
+  - Signal
+  - Skype
+  - Slack
+  - Build T.
+  - Term
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
