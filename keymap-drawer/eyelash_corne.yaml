@@ -197,11 +197,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   NAV:
   - {type: none}
-  - $$mdi:keyboard-esc$$
-  - Ctl+ W
-  - Ctl+ F
-  - {type: none}
-  - INS
+  - Ctl+Gui+ O
+  - Ctl+Gui+ W
+  - Ctl+Gui+ F
+  - Ctl+Gui+ L
+  - Ctl+Gui+ J
   - $$mdi:arrow-up-bold$$
   - {type: none}
   - Alt+ 1
@@ -210,11 +210,11 @@ layers:
   - Alt+ 4
   - {type: none}
   - Alt+ $$mdi:keyboard-tab$$
-  - {t: LGUI, h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {type: none}
+  - Ctl+Gui+ A
+  - Ctl+Gui+ Y
+  - Ctl+Gui+ S
+  - Ctl+Gui+ B
+  - Ctl+Gui+ T
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
@@ -225,11 +225,11 @@ layers:
   - Wsp 4
   - Ctl+ PGUP
   - {type: none}
-  - UNDO
-  - CUT
-  - COPY
-  - PASTE
-  - REDO
+  - Ctl+Gui+ X
+  - {type: none}
+  - Ctl+Sft+ C
+  - Ctl+Sft+ V
+  - {type: none}
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
   - {type: none}
