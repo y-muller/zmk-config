@@ -276,7 +276,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &kp GT        &kp N7       &kp N8        &kp N9        &at_ca                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
+&kp X      &kp GT        &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 &kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
 &none      &kp LT        &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &pipe_quest &kp RGUI
                                                   &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
