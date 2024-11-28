@@ -124,10 +124,10 @@
 
         ext_capsword: extend_capsword {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&mo EXTEND>, <&caps_word>;
+            bindings = <&mo>, <&caps_word>;
         };
 
         symb_altgr: symbols_altgr {
@@ -149,7 +149,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ext_capsword>, <&kp CAPSLOCK>;
+            bindings = <&ext_capsword EXTEND>, <&kp CAPSLOCK>;
         };
 
         comm_grv: comma_grave {
