@@ -91,11 +91,11 @@ layers:
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - HOME
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
   - END
   SYMBOLS:
   - X
@@ -105,11 +105,11 @@ layers:
   - '9'
   - {t: '@', s: ^}
   - $$mdi:arrow-up-bold$$
-  - J
-  - L
-  - U
-  - Y
-  - {t: ;, s: ':'}
+  - '&'
+  - (
+  - )
+  - '{'
+  - '}'
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   - {t: ., h: LGUI}
@@ -120,11 +120,11 @@ layers:
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
-  - M
-  - {t: N, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: E, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: LGUI}
+  - '='
+  - {t: '-', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: +, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: /, h: '$$mdi:apple-keyboard-option$$', s: '?'}
+  - {t: '*', h: LGUI}
   - {t: '$$mdi:keyboard-return$$', h: MEDIA}
   - {type: none}
   - <
@@ -134,18 +134,18 @@ layers:
   - {t: $, s: '%'}
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
-  - K
-  - H
-  - {t: ',', s: '`'}
-  - {t: ., s: '~'}
+  - {t: '!', s: \}
+  - _
+  - '&LBKT'
+  - '&RBKT'
   - {t: '|', s: '?'}
   - RGUI
-  - LGUI
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:keyboard-space$$', h: EXTEND}
-  - {t: '$$mdi:keyboard-return$$', h: EXTEND, type: held}
-  - $$mdi:keyboard-space$$
-  - $$mdi:apple-keyboard-option$$
+  - {t: ▽, type: trans}
+  - {t: '0', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   EXTEND:
   - {type: none}
   - $$mdi:keyboard-esc$$
@@ -189,16 +189,16 @@ layers:
   - {type: none}
   - $$mdi:backspace-reverse-outline$$
   - GNOME
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held alternate}
-  - {type: held alternate}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   NAV:
   - {type: none}
   - Ctl+Gui+ O
-  - Ctl+Gui+ W
+  - Ffox
   - Ctl+Gui+ F
   - Ctl+Gui+ L
   - Ctl+Gui+ J
@@ -239,10 +239,10 @@ layers:
   - {t: F3, s: F8}
   - Ctl+ PGDN
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Alt+ $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
   - Alt+ $$mdi:arrow-right-bold$$
   FUNC:
   - {type: none}
@@ -257,7 +257,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {type: none}
   - {type: none}
   - F1
@@ -272,7 +272,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
+  - $$mdi:progress-download$$
   - {type: none}
   - {type: none}
   - F4
@@ -287,61 +287,12 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  Fn:
-  - {t: '$$mdi:transfer$$', type: trans}
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - F11
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-scroll-wheel$$
-  - $$mdi:mouse-right-click-outline$$
-  - '&mkp MB4'
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-  - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - $$mdi:progress-download$$
-  - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-scroll-wheel$$
-  - $$mdi:mouse-right-click-outline$$
-  - PRINTSCREEN
-  - F12
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - '&mkp MB5'
-  - $$mdi:volume-off$$
-  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - SCROLLLOCK
-  - PAUSE BREAK
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [23, 37]
   k: _
