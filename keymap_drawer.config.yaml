@@ -282,11 +282,9 @@ parse_config:
     RPAR: )
     EQUAL:
       tap: "="
-      shifted: "+"
     PLUS: +
     MINUS:
       tap: "-"
-      shifted: "_"
     UNDERSCORE: _
     UNDER: _
     SLASH:
@@ -330,7 +328,6 @@ parse_config:
     PERIOD: '.'
     DOT:
       tap: "."
-      shifted: ">"
     COMMA:
       tap: ","
       shifted: "<"

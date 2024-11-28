@@ -54,6 +54,36 @@
 #define TAB_R &kp LC(LA(PG_DN))
 
 / {
+    macros {
+        parent_dir: parent_dir {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp DOT &kp DOT &kp SLASH>;
+        };
+        home_dir: home_dir {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp TILDE &kp SLASH>;
+        };
+        new_sentence: new_sentence {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp DOT &kp SPACE>
+                , <&sk LSHFT>
+                ;
+        };
+        workspace: workspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TILDE &kp SLASH>
+                , <&macro_tap &kp W &kp O &kp R &kp K &kp S &kp P &kp A &kp C &kp E>
+                , <&macro_tap &kp SLASH>
+                ;
+        };
+    };
+
     behaviors {
         hrl: home_row_left {
             compatible = "zmk,behavior-hold-tap";
@@ -97,6 +127,24 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        at_caret: at_caret {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp AT>, <&kp CARET>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        dlr_prc: dollar_percent {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOLLAR>, <&kp PERCENT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        pipe_quest: pipe_quest {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE>, <&kp QUEST>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -218,19 +266,19 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "SYMBOLS";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │  x   │  >  │  7  │  8  │  9  │  @  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
+            // │  x   │  >  │  7  │  8  │  9  │ @ ^ │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │ TAB  │  .  │  1  │  2  │  3  │  #  │          ┃  ←  ┃enter┃  →  ┃   │  =  │  -  │  +  │  /  │  *  │ ENT  │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │  <  │  4  │  5  │  6  │  $  │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │  /  │ Comp │
+            // │      │  <  │  4  │  5  │  6  │ $ % │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │ | ? │ Comp │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &kp GT        &kp N7       &kp N8        &kp N9        &kp AT                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
+&kp X      &kp GT        &kp N7       &kp N8        &kp N9        &at_ca                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 &kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
-&none      &kp LT        &kp N4       &kp N5        &kp N6        &kp DOLLAR  &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &kp RGUI
+&none      &kp LT        &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &pipe_quest &kp RGUI
                                                   &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
