@@ -235,8 +235,8 @@ layers:
   - {type: none}
   - Ctl+Alt+ PG UP
   - Ctl+Alt+ PG DN
-  - {type: none}
-  - {type: none}
+  - {t: Sft+ F3, s: Ctl+ F8}
+  - {t: F3, s: F8}
   - Ctl+ PGDN
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -367,3 +367,6 @@ combos:
 - p: [2, 3]
   k: Ctl+ S
   l: [COLEMAK]
+- p: [25, 39]
+  k: {h: \, s: '|'}
+  l: [SYMBOLS]
