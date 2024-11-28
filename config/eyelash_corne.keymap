@@ -127,7 +127,7 @@
             #binding-cells = <0>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&mo EXTEND>, <&capsword>;
+            bindings = <&mo EXTEND>, <&caps_word>;
         };
 
         symb_altgr: symbols_altgr {
