@@ -85,7 +85,7 @@ layers:
   - {type: none}
   - $$mdi:keyboard-space$$
   - $$mdi:pan-down$$
-  - {t: Ctl+ -, s: Ctl+ _}
+  - Ctl+ -
   - $$mdi:mouse-scroll-wheel$$
   - {type: none}
   - $$mdi:arrow-left-bold$$
@@ -103,7 +103,7 @@ layers:
   - '7'
   - '8'
   - '9'
-  - '@'
+  - '&at_ca'
   - $$mdi:arrow-up-bold$$
   - J
   - L
@@ -112,7 +112,7 @@ layers:
   - {t: ;, s: ':'}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - {t: ., h: LGUI, s: '>'}
+  - {t: ., h: LGUI}
   - {t: '1', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '2', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '3', h: '$$mdi:apple-keyboard-control$$'}
@@ -131,14 +131,14 @@ layers:
   - '4'
   - '5'
   - '6'
-  - $
+  - {t: $, s: '%'}
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
   - K
   - H
   - {t: ',', s: '`'}
   - {t: ., s: '~'}
-  - {t: /, s: '?'}
+  - {t: '|', s: QUEST}
   - RGUI
   - LGUI
   - $$mdi:apple-keyboard-shift$$
