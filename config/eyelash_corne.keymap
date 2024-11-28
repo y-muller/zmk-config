@@ -147,6 +147,18 @@
             bindings = <&kp PIPE>, <&kp QUESTION>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        srch_prv: search_prev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(F3)>, <&kp LC(F8)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        srch_nxt: search_next {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp F3>, <&kp F8>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -212,6 +224,12 @@
             key-positions = <2 3>;
             bindings = <&kp LC(S)>;
             layers = <COLEMAK>;
+        };
+        combo_backslash {
+            timeout-ms = <50>;
+            key-positions = <25 39>;
+            bindings = <&kp BACKSLASH>;
+            layers = <SYMBOLS>;
         };
     };
 
@@ -322,7 +340,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             bindings = <
 &none       &kp ESC      &kp LC(W)    &kp LC(F)     &none         &kp INS                         &kp UP                 &none      &kp LA(N1)    &kp LA(N2)   &kp LA(N3) &kp LA(N4)  &none
 &kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &none      &kp LG(F1)    &kp LG(F2)   &kp LG(F3) &kp LG(F4)  &kp LC(PGUP)
-&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &none      TAB_L         TAB_R        &none      &none       &kp LC(PGDN)
+&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &none      TAB_L         TAB_R        &srch_prv  &srch_nxt   &kp LC(PGDN)
                                                   &trans   &trans  &trans                                     &kp LA(LEFT) &trans  &kp LA(RIGHT)
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
