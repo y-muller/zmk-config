@@ -53,6 +53,19 @@
 #define TAB_L &kp LC(LA(PG_UP))
 #define TAB_R &kp LC(LA(PG_DN))
 
+/* Application shortcuts */
+#define APP_FFOX &kp LC(LG(W))
+#define APP_FILE &kp LC(LG(F))
+#define APP_CODE &kp LC(LG(L))
+#define APP_JOPL &kp LC(LG(J))
+#define APP_SIGN &kp LC(LG(A))
+#define APP_SKYP &kp LC(LG(Y))
+#define APP_SLAC &kp LC(LG(S))
+#define APP_BTRM &kp LC(LG(B))
+#define APP_NTRM &kp LC(LG(T))
+#define APP_SCRP &kp LC(LG(X))
+#define APP_TRSM &kp LC(LG(O))
+
 / {
     macros {
         parent_dir: parent_dir {
@@ -328,19 +341,19 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "NAV";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │ ESC  │  Q  │  W  │  F  │  P  │  B  │                ┃  ↑  ┃         │     │Alt-1│Alt-2│Alt-3│Alt-4│      │
+            // │      │Trsm │Ffox │Files│CodeL│Jopln│                ┃  ↑  ┃         │     │Alt-1│Alt-2│Alt-3│Alt-4│      │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ TAB  │  A  │  R  │  S  │  T  │  G  │          ┃  ←  ┃enter┃  →  ┃   │     │Wksp1│Wksp2│Wkrp3│Wksp4│C-PGUP│
+            // │ TAB  │Signl│Skype│Slack│Build│NTerm│          ┃  ←  ┃enter┃  →  ┃   │     │Wksp1│Wksp2│Wkrp3│Wksp4│C-PGUP│
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │CTL/SP│  Z  │  X  │  C  │  D  │  V  │ ┃MUTE┃         ┃  ↓  ┃         │     │T Lft│T Rgt│     │     │C-PGDN│
+            // │      │ScrpB│     │TCopy│TPast│     │ ┃MUTE┃         ┃  ↓  ┃         │     │T Lft│T Rgt│Srch-│Srch+│C-PGDN│
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
-            //                        │ GUI │ SFT │ SPC │                        │Alt ←│ SPC │Alt →│
+            //                        │     │     │     │                        │Alt ←│     │Alt →│
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&none       &kp ESC      &kp LC(W)    &kp LC(F)     &none         &kp INS                         &kp UP                 &none      &kp LA(N1)    &kp LA(N2)   &kp LA(N3) &kp LA(N4)  &none
-&kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &none      &kp LG(F1)    &kp LG(F2)   &kp LG(F3) &kp LG(F4)  &kp LC(PGUP)
-&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &none      TAB_L         TAB_R        &srch_prv  &srch_nxt   &kp LC(PGDN)
+&none       APP_TRSM     APP_FFOX     APP_FILE      APP_CODE      APP_JOPL                        &kp UP                 &none      &kp LA(N1)    &kp LA(N2)   &kp LA(N3) &kp LA(N4)  &none
+&kp LA(TAB) APP_SIGN     APP_SKYP     APP_SLAC      APP_BTRM      APP_NTRM              &kp LEFT  &kp ENTER  &kp RIGHT   &none      &kp LG(F1)    &kp LG(F2)   &kp LG(F3) &kp LG(F4)  &kp LC(PGUP)
+&none       APP_SCRP     &none        &kp LC(LS(C)) &kp LC(LS(V)) &none      &kp SPACE            &kp DOWN               &none      TAB_L         TAB_R        &srch_prv  &srch_nxt   &kp LC(PGDN)
                                                   &trans   &trans  &trans                                     &kp LA(LEFT) &trans  &kp LA(RIGHT)
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
