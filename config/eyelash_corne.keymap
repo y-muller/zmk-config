@@ -122,11 +122,34 @@
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
+        ext_capsword: extend_capsword {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&mo EXTEND>, <&capsword>;
+        };
+
+        symb_altgr: symbols_altgr {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&mo SYMBOLS>, <&sk RALT>;
+        };
+
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
+
+        td_extcaps: tap_dance_ext_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ext_capsword>, <&kp CAPSLOCK>;
         };
 
         comm_grv: comma_grave {
@@ -272,7 +295,7 @@
 MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 EXT_TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
 LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
-                                                  &mo NAV  &kp LSHIFT &mo EXTEND                                &mo SYMBOLS  &kp SPACE  &mo FUNC
+                                                  &mo NAV  &kp LSHIFT &td_extcaps                               &symb_altgr  &kp SPACE  &mo FUNC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -314,7 +337,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
 
             bindings = <
 &kp X      &kp GT        &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp AMPS     &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
-&kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp EQUAL    &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR MEDIA_ENT
+&kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp EQUAL    &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR &kp ENTER
 &none      &kp LT        &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &excl_bslsh  &kp UNDER     &kp LBKT     &kp RBKT     &pipe_quest &kp RGUI
                                                   &trans  &mt LSHIFT 0 &trans                                   &trans  &trans  &trans
             >;
@@ -369,7 +392,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "FUNC";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │ ESC  │  Q  │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │     │     │     │     │     │RESET │
+            // │ ESC  │  Q  │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │BTrst│ BT1 │ BT2 │ BT3 │ BT4 │RESET │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │ TAB  │  A  │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │ BOOT │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
@@ -379,7 +402,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&none       &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &none      &none         &none        &none      &none       &sys_reset
+&none       &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &bt BT_CLR_ALL &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &sys_reset
 &none       &none        &kp F1       &kp F2        &kp F3        &kp F11             &kp LEFT  &kp ENTER  &kp RIGHT   &none      &none         &none        &none      &none       &bootloader
 &none       &none        &kp F4       &kp F5        &kp F6        &kp F10  &kp SPACE            &kp DOWN               &none      &none         &none        &none      &none       &none
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
