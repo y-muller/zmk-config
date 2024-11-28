@@ -113,7 +113,7 @@ parse_config:
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
-    tap: $$mdi:transfer$$
+    tap: '▽'
     type: trans
 
   raw_binding_map:
@@ -524,6 +524,9 @@ parse_config:
     RG(RS(V)):
       tap: $$mdi:video$$
       hold: zoom
+
+    # Applications
+    LC(LG(W)): "Ffox"
 
   zmk_combos:
     combo_to_2:

@@ -160,6 +160,12 @@
             bindings = <&kp PIPE>, <&kp QUESTION>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        excl_bslsh: exclam_bslash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         srch_prv: search_prev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -281,7 +287,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │      │PLAY │STOP │PREV │NEXT │     │ ┃MUTE┃         ┃ s↓  ┃         │ZOOM-│ mM  │     │  ←  │  ↓  │  →   │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
-            //                        │ GUI │ SFT │ SPC │                        │HOME │ SPC │ END │I
+            //                        │     │     │     │                        │HOME │     │ END │I
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
@@ -297,20 +303,20 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "SYMBOLS";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │  x   │  >  │  7  │  8  │  9  │ @ ^ │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
+            // │  x   │  >  │  7  │  8  │  9  │ @ ^ │                ┃  ↑  ┃         │  &  │  (  │  )  │  {  │  }  │ BKSP │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │ TAB  │  .  │  1  │  2  │  3  │  #  │          ┃  ←  ┃enter┃  →  ┃   │  =  │  -  │  +  │  /  │  *  │ ENT  │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │  <  │  4  │  5  │  6  │ $ % │ ┃MUTE┃         ┃  ↓  ┃         │  K  │  H  │ , ` │ . ~ │ | ? │ Comp │
+            // │      │  <  │  4  │  5  │  6  │ $ % │ ┃MUTE┃         ┃  ↓  ┃         │ ! \ │  _  │ , ` │ . ~ │ | ? │ Comp │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
-            //                        │ GUI │ SFT │ SPC │                        │ ENT │ SPC │ ALT │
+            //                        │     │Sft/0│     │                        │     │     │     │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &kp GT        &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
-&kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
-&none      &kp LT        &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &pipe_quest &kp RGUI
-                                                  &kp LGUI  &kp LSHIFT &lt 3 SPACE                                   &lt 3 ENTER  &kp SPACE  &kp RALT
+&kp X      &kp GT        &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp AMPS     &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
+&kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp EQUAL    &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR MEDIA_ENT
+&none      &kp LT        &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &excl_bslsh  &kp UNDER     &LBKT        &RBKT        &pipe_quest &kp RGUI
+                                                  &trans  &mt LSHIFT 0 &trans                                   &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -363,9 +369,9 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "FUNC";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │ ESC  │  Q  │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │     │     │     │     │     │      │
+            // │ ESC  │  Q  │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │     │     │     │     │     │RESET │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ TAB  │  A  │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │      │
+            // │ TAB  │  A  │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │ BOOT │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │CTL/SP│  Z  │ F4  │ F5  │ F6  │ F10 │ ┃MUTE┃         ┃  ↓  ┃         │     │     │     │     │     │      │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
@@ -373,23 +379,13 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&none       &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &none      &none         &none        &none      &none       &none
-&none       &none        &kp F1       &kp F2        &kp F3        &kp F11             &kp LEFT  &kp ENTER  &kp RIGHT   &none      &none         &none        &none      &none       &none
+&none       &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &none      &none         &none        &none      &none       &sys_reset
+&none       &none        &kp F1       &kp F2        &kp F3        &kp F11             &kp LEFT  &kp ENTER  &kp RIGHT   &none      &none         &none        &none      &none       &bootloader
 &none       &none        &kp F4       &kp F5        &kp F6        &kp F10  &kp SPACE            &kp DOWN               &none      &none         &none        &none      &none       &none
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        layer_3 {
-            display-name = "Fn";
-            bindings = <
-&trans  &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                &trans      &trans      &trans                                                                   &trans       &trans     &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
     };
 };
