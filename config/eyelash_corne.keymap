@@ -144,7 +144,7 @@
         pipe_quest: pipe_quest {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp PIPE>, <&kp QUEST>;
+            bindings = <&kp PIPE>, <&kp QUESTION>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
