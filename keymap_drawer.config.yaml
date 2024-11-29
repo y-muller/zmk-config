@@ -258,7 +258,8 @@ parse_config:
       tap: $$mdi:progress-download$$
       
     # Custom
-    "&home_dir": "~/”
+    "&home_dir":
+      hold: "~/”
 
   # ZMK
   zmk_keycode_map:
