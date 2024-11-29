@@ -48,6 +48,7 @@
 
 #define SYMB_ALTGR &mo_sk SYMBOLS RALT
 #define SLASH_DIRS &ht_dirs 0 SLASH
+#define DOT_MACROS &ht_sentence 0 0
 #define MEDIA_ESC &lt MEDIA ESC
 #define MEDIA_ENT &lt MEDIA ENTER
 #define EXT_TAB &lt EXTEND TAB
@@ -148,6 +149,14 @@
             bindings = <&dir_hup>, <&kp>;
         };
 
+        ht_sentence: ht_sentence {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&sentence_wksp>, <&dot_tld>;
+        };
+
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
@@ -215,6 +224,12 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&home_dir>, <&parent_dir>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sentence_wksp: newsentence_workspace {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&new_sentence>, <&workspace>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
