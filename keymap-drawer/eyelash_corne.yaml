@@ -45,7 +45,7 @@ layers:
   - NAV
   - $$mdi:apple-keyboard-shift$$
   - '&td_extcaps'
-  - '&symb_altgr'
+  - {t: '$$mdi:apple-keyboard-option$$', h: SYMBOLS}
   - $$mdi:keyboard-space$$
   - FUNC
   MEDIA:
@@ -143,7 +143,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: '0', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   EXTEND:
