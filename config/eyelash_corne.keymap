@@ -325,7 +325,7 @@
             bindings = <
 MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 EXT_TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
-LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     SLASH_DIRS  &mt LALT SQT
+LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    DOT_MACROS   SLASH_DIRS  &mt LALT SQT
                                                   &mo NAV  &kp LSHIFT &td_extcaps                               SYMB_ALTGR  &kp SPACE  &mo FUNC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
