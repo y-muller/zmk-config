@@ -40,7 +40,7 @@ layers:
   - H
   - {t: ',', s: '`'}
   - {t: ., s: '~'}
-  - {t: /, s: '?'}
+  - {t: '&home_dir', h: /, s: '&parent_dir'}
   - {t: '''', h: '$$mdi:apple-keyboard-option$$', s: '"'}
   - NAV
   - $$mdi:apple-keyboard-shift$$
