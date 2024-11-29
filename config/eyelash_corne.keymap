@@ -46,6 +46,7 @@
 #define U_WH_L &msc SCRL_LEFT
 #define U_WH_R &msc SCRL_RIGHT
 
+#define SYMB_ALTGR &mo_sk SYMBOLS RALT
 #define MEDIA_ESC &lt MEDIA ESC
 #define MEDIA_ENT &lt MEDIA ENTER
 #define EXT_TAB &lt EXTEND TAB
@@ -122,7 +123,7 @@
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
-        ext_capsword: extend_capsword {
+        mo_capsword: mo_capsword {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
@@ -130,12 +131,12 @@
             bindings = <&mo>, <&caps_word>;
         };
 
-        symb_altgr: symbols_altgr {
+        mo_sk: mo_sticky {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&mo SYMBOLS>, <&sk RALT>;
+            bindings = <&mo>, <&sk>;
         };
 
         td0: td0 {
@@ -149,7 +150,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ext_capsword EXTEND 0>, <&kp CAPSLOCK>;
+            bindings = <&mo_capsword EXTEND 0>, <&kp CAPSLOCK>;
         };
 
         comm_grv: comma_grave {
@@ -295,7 +296,7 @@
 MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 EXT_TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
 LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
-                                                  &mo NAV  &kp LSHIFT &td_extcaps                               &symb_altgr  &kp SPACE  &mo FUNC
+                                                  &mo NAV  &kp LSHIFT &td_extcaps                               SYMB_ALTGR  &kp SPACE  &mo FUNC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
