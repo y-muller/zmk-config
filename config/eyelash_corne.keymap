@@ -47,6 +47,7 @@
 #define U_WH_R &msc SCRL_RIGHT
 
 #define SYMB_ALTGR &mo_sk SYMBOLS RALT
+#define SLASH_DIRS &ht_dirs SLASH 0
 #define MEDIA_ESC &lt MEDIA ESC
 #define MEDIA_ENT &lt MEDIA ENTER
 #define EXT_TAB &lt EXTEND TAB
@@ -139,6 +140,14 @@
             bindings = <&mo>, <&sk>;
         };
 
+        ht_dirs: ht_dirs {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&kp>, <&dir_hup>;
+        };
+
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
@@ -200,6 +209,12 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp F3>, <&kp F8>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        dir_hup: dir_home_up {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&home_dir>, <&parent_dir>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -295,7 +310,7 @@
             bindings = <
 MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 EXT_TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
-LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     &kp FSLH    &mt LALT SQT
+LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    &dot_tld     SLASH_DIRS  &mt LALT SQT
                                                   &mo NAV  &kp LSHIFT &td_extcaps                               SYMB_ALTGR  &kp SPACE  &mo FUNC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
