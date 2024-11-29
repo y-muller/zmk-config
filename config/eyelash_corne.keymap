@@ -47,7 +47,7 @@
 #define U_WH_R &msc SCRL_RIGHT
 
 #define SYMB_ALTGR &mo_sk SYMBOLS RALT
-#define SLASH_DIRS &ht_dirs SLASH 0
+#define SLASH_DIRS &ht_dirs 0 SLASH
 #define MEDIA_ESC &lt MEDIA ESC
 #define MEDIA_ENT &lt MEDIA ENTER
 #define EXT_TAB &lt EXTEND TAB
@@ -145,7 +145,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&kp>, <&dir_hup>;
+            bindings = <&dir_hup>, <&kp>;
         };
 
         td0: td0 {
