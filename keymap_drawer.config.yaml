@@ -259,7 +259,6 @@ parse_config:
       
     # Custom
     "&home_dir": "~/”
-#    "&new_sentence": ".␣⇧"
 
   # ZMK
   zmk_keycode_map:
