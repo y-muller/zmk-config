@@ -139,7 +139,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             bindings = <&mo>, <&caps_word>;
         };
 
@@ -350,6 +350,12 @@
             bindings = <&vimcmd>;
             layers = <COLEMAK>;
         };
+        combo_media {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&tog MEDIA>;
+            layers = <COLEMAK MEDIA>;
+        };
     };
 
     keymap {
@@ -391,7 +397,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &kp F20       &kp F5                        U_WH_U             &none         &mkp LCLK    U_MS_U      &mkp RCLK    &none       &kp PG_UP    
+&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &kp F20       &kp F5                        U_WH_U             &tog MEDIA    &mkp LCLK    U_MS_U      &mkp RCLK    &none       &kp PG_UP
 &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 U_WH_L  &kp ENTER  U_WH_R  &kp LC(PLUS)  U_MS_L       U_MS_D      U_MS_R       &kp UP      &kp PG_DN
 &none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE          U_WH_D             &kp LC(MINUS) &mkp MCLK    &none       &kp LEFT     &kp DOWN    &kp RIGHT
                                                   &trans   &trans  &trans                                     &kp HOME   &trans  &kp END
