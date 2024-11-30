@@ -642,6 +642,10 @@ rect.held, rect.combo.held {
 <tspan x="280" dy="-0.6em">Ctl+</tspan><tspan x="280" dy="1.2em">S</tspan>
 </text>
 </g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="742" y="18" width="28" height="26" class="combo"/>
+<text x="756" y="31" class="combo tap"><tspan style="font-size: 86%">&amp;vimcmd</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 318)" class="layer-MEDIA">

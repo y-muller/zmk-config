@@ -336,3 +336,6 @@ combos:
 - p: [32, 33]
   k: Ctl+ S
   l: [COLEMAK]
+- p: [8, 9]
+  k: '&vimcmd'
+  l: [COLEMAK]
