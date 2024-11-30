@@ -646,6 +646,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="742" y="18" width="28" height="26" class="combo"/>
 <text x="756" y="31" class="combo tap"><tspan style="font-size: 86%">&amp;vimcmd</tspan></text>
 </g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="42" y="36" width="28" height="26" class="combo"/>
+<a href="#MEDIA">
+<text x="56" y="49" class="combo tap layer-activator">MEDIA</text>
+</a><text x="56" y="60" class="combo hold">toggle</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 318)" class="layer-MEDIA">
@@ -686,9 +692,12 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <use href="#mdi:pan-up" xlink:href="#mdi:pan-up" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:pan-up"/>
 </g>
-<g transform="translate(672, 41)" class="key none keypos-7">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key none"/>
+<g transform="translate(672, 41)" class="key keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<a href="#MEDIA">
+<text x="0" y="-4" class="key tap layer-activator">MEDIA</text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(728, 35)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -893,6 +902,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">END</text>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="42" y="36" width="28" height="26" class="combo"/>
+<a href="#MEDIA">
+<text x="56" y="49" class="combo tap layer-activator">MEDIA</text>
+</a><text x="56" y="60" class="combo hold">toggle</text>
 </g>
 </g>
 </g>
