@@ -71,6 +71,11 @@
 
 / {
     macros {
+        macro_qu: macro_qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp Q &kp U>;
+        };
         parent_dir: parent_dir {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -128,7 +133,7 @@
         mo_capsword: mo_capsword {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <280>;
             bindings = <&mo>, <&caps_word>;
         };
@@ -250,6 +255,12 @@
 
     combos {
         compatible = "zmk,combos";
+        combo_qu {
+            timeout-ms = <50>;
+            key-positions = <14 29>;
+            bindings = <&macro_qu>;
+            layers = <COLEMAK>;
+        };
         combo_under {
             timeout-ms = <50>;
             key-positions = <23 37>;
@@ -292,17 +303,41 @@
             bindings = <&kp EXCL>;
             layers = <COLEMAK>;
         };
+        combo_backslash {
+            timeout-ms = <50>;
+            key-positions = <25 39>;
+            bindings = <&kp BACKSLASH>;
+            layers = <SYMBOLS>;
+        };
         combo_save {
             timeout-ms = <50>;
             key-positions = <2 3>;
             bindings = <&kp LC(S)>;
             layers = <COLEMAK>;
         };
-        combo_backslash {
+        combo_copy {
             timeout-ms = <50>;
-            key-positions = <25 39>;
-            bindings = <&kp BACKSLASH>;
-            layers = <SYMBOLS>;
+            key-positions = <30 31>;
+            bindings = <&kp LC(C)>;
+            layers = <COLEMAK>;
+        };
+        combo_paste {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp LC(V)>;
+            layers = <COLEMAK>;
+        };
+        combo_cut {
+            timeout-ms = <50>;
+            key-positions = <30 32>;
+            bindings = <&kp LC(X)>;
+            layers = <COLEMAK>;
+        };
+        combo_redo {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp LC(S)>;
+            layers = <COLEMAK>;
         };
     };
 
@@ -423,18 +458,18 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "FUNC";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │ ESC  │  Q  │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │BTrst│ BT1 │ BT2 │ BT3 │ BT4 │RESET │
+            // │      │     │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │BTrst│ BT1 │ BT2 │ BT3 │ BT4 │RESET │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ TAB  │  A  │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │ BOOT │
+            // │ BOOT │     │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │ BOOT │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │CTL/SP│  Z  │ F4  │ F5  │ F6  │ F10 │ ┃MUTE┃         ┃  ↓  ┃         │     │     │     │     │     │      │
+            // │      │     │ F4  │ F5  │ F6  │ F10 │ ┃MUTE┃         ┃  ↓  ┃         │     │     │     │     │     │      │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │     │     │     │                        │     │     │     │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&none       &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &bt BT_CLR_ALL &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &sys_reset
-&none       &none        &kp F1       &kp F2        &kp F3        &kp F11             &kp LEFT  &kp ENTER  &kp RIGHT   &none      &none         &none        &none      &none       &bootloader
+&sys_reset  &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &bt BT_CLR_ALL &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &sys_reset
+&bootloader &none        &kp F1       &kp F2        &kp F3        &kp F11             &kp LEFT  &kp ENTER  &kp RIGHT   &none      &none         &none        &none      &none       &bootloader
 &none       &none        &kp F4       &kp F5        &kp F6        &kp F10  &kp SPACE            &kp DOWN               &none      &none         &none        &none      &none       &none
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
             >;
