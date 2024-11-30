@@ -39,7 +39,7 @@ layers:
   - K
   - H
   - {t: ',', s: '`'}
-  - {t: ., s: '~'}
+  - {t: ., h: '&new_sentence', s: '~'}
   - {t: /, h: '&home_dir', s: '?'}
   - {t: '''', h: '$$mdi:apple-keyboard-option$$', s: '"'}
   - NAV
