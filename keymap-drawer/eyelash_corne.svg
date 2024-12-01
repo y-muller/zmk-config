@@ -652,6 +652,12 @@ rect.held, rect.combo.held {
 <text x="56" y="49" class="combo tap layer-activator">MEDIA</text>
 </a><text x="56" y="60" class="combo hold">toggle</text>
 </g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="42" y="36" width="28" height="26" class="combo"/>
+<a href="#MEDIA">
+<text x="56" y="49" class="combo tap layer-activator">MEDIA</text>
+</a><text x="56" y="60" class="combo hold">toggle</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 321)" class="layer-MEDIA">
