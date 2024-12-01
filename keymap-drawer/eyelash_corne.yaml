@@ -56,7 +56,7 @@ layers:
   - $$mdi:microphone-off$$
   - F5
   - $$mdi:pan-up$$
-  - {type: none}
+  - {t: MEDIA, h: toggle}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-right-click-outline$$
@@ -339,3 +339,6 @@ combos:
 - p: [8, 9]
   k: '&vimcmd'
   l: [COLEMAK]
+- p: [0, 1]
+  k: {t: MEDIA, h: toggle}
+  l: [COLEMAK, MEDIA]
