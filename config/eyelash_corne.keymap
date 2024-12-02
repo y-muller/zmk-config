@@ -167,7 +167,6 @@
         help_main: help_main {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            slow-release = "true";
             bindings
                 = <&macro_tap &kp INTERNATIONAL_1>
                 , <&macro_pause_for_release>
