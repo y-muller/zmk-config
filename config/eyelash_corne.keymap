@@ -308,9 +308,9 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&less_equal>, <&gt_dqt>;
+            bindings = <&less_equal>, <&lt_dqt>;
         };
-        gt_sqt: lessthan_doublequote {
+        lt_dqt: lessthan_doublequote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LT>, <&kp DQT>;
