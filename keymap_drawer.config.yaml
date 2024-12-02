@@ -1,8 +1,8 @@
 draw_config:
   n_columns: 1
   draw_key_sides: true
-  key_w: 60.0
-  key_h: 56.0
+  key_w: 62.0
+  key_h: 57.0
   split_gap: 30.0
   combo_w: 28.0
   combo_h: 26.0

@@ -74,12 +74,19 @@
         macro_qu: macro_qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp Q &kp U>;
+            bindings
+                = <&macro_tap &kp Q>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp U>
+                ;
         };
         parent_dir: parent_dir {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp DOT &kp DOT &kp SLASH>;
+            bindings
+                = <&macro_release &kp LSHFT>
+                , <&macro_tap &kp DOT &kp DOT &kp SLASH>
+                ;
         };
         home_dir: home_dir {
             compatible = "zmk,behavior-macro";
@@ -98,7 +105,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp TILDE &kp SLASH>
+                = <&macro_release &kp LSHFT>
+                , <&macro_tap &kp TILDE &kp SLASH>
                 , <&macro_tap &kp W &kp O &kp R &kp K &kp S &kp P &kp A &kp C &kp E>
                 , <&macro_tap &kp SLASH>
                 ;
@@ -336,6 +344,12 @@
             timeout-ms = <50>;
             key-positions = <30 32>;
             bindings = <&kp LC(X)>;
+            layers = <COLEMAK>;
+        };
+        combo_undo {
+            timeout-ms = <50>;
+            key-positions = <29 30>;
+            bindings = <&kp LC(S)>;
             layers = <COLEMAK>;
         };
         combo_redo {
