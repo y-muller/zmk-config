@@ -46,6 +46,7 @@
 #define U_WH_L &msc SCRL_LEFT
 #define U_WH_R &msc SCRL_RIGHT
 
+#define EXT_CAPS &mo_caps EXTEND 0
 #define SYMB_ALTGR &mo_sk SYMBOLS RALT
 #define SLASH_DIRS &ht_dirs 0 SLASH
 #define DOT_MACROS &ht_sentence 0 0
@@ -151,6 +152,14 @@
             bindings = <&mo>, <&caps_word>;
         };
 
+        mo_caps: mo_caps {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&td_caps>;
+        };
+
         mo_sk: mo_sticky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -187,6 +196,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo_capsword EXTEND 0>, <&kp CAPSLOCK>;
+        };
+
+        td_caps: tap_dance_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&caps_word>, <&kp CAPSLOCK>;
         };
 
         comm_grv: comma_grave {
@@ -349,13 +365,13 @@
         combo_undo {
             timeout-ms = <50>;
             key-positions = <29 30>;
-            bindings = <&kp LC(S)>;
+            bindings = <&kp LC(Z)>;
             layers = <COLEMAK>;
         };
         combo_redo {
             timeout-ms = <50>;
             key-positions = <32 33>;
-            bindings = <&kp LC(S)>;
+            bindings = <&kp LC(Y)>;
             layers = <COLEMAK>;
         };
         combo_vimcmd {
@@ -392,7 +408,7 @@
 MEDIA_ESC  &kp Q        &kp W        &kp F         &kp P         &kp B                           &kp UP                 &kp J        &kp L         &kp U        &kp Y        &kp SEMI    &kp BSPC
 EXT_TAB    &hrl LGUI A  &hrl LALT R  &hrl LSHFT S  &hrl LCTRL T  &kp G                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp M        &hrr LCTRL N  &hrr LSHFT E &hrr LALT I  &hrr LGUI O MEDIA_ENT
 LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp SPACE            &kp DOWN               &kp K        &kp H         &comm_grv    DOT_MACROS   SLASH_DIRS  &mt LALT SQT
-                                                  &mo NAV  &kp LSHIFT &td_extcaps                               SYMB_ALTGR  &kp SPACE  &mo FUNC
+                                                  &mo NAV  &kp LSHIFT  EXT_CAPS                                 SYMB_ALTGR  &kp SPACE  &mo FUNC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
