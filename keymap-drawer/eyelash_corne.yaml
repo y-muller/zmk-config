@@ -106,7 +106,7 @@ layers:
   - {t: '@', s: ^}
   - $$mdi:arrow-up-bold$$
   - {t: '&', h: '&amps_amps', s: '&amps_spaces'}
-  - (
+  - {t: (, h: '&lpar_rpar'}
   - )
   - '{'
   - '}'
