@@ -333,6 +333,9 @@ combos:
 - p: [30, 32]
   k: CUT
   l: [COLEMAK]
+- p: [29, 30]
+  k: Ctl+ S
+  l: [COLEMAK]
 - p: [32, 33]
   k: Ctl+ S
   l: [COLEMAK]
