@@ -146,7 +146,7 @@
         not_equal_spaces: not_equal_spaces {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kb SPC &kp EXCL &kp EQUAL &kp SPC>;
+            bindings = <&macro_tap &kp SPC &kp EXCL &kp EQUAL &kp SPC>;
         };
         equal_spaces: equal_spaces {
             compatible = "zmk,behavior-macro";
@@ -306,7 +306,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&greater_equal>, <&gt_sqt>;
+            bindings = <&greater_equal_mm>, <&gt_sqt>;
         };
         gt_sqt: greaterthan_singlequote {
             compatible = "zmk,behavior-mod-morph";
@@ -314,17 +314,29 @@
             bindings = <&kp GT>, <&kp SQT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        greater_equal_mm: greater_equal_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&greater_equal>, <&greater_equal_spaces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         ht_lt: ht_lt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&less_equal>, <&lt_dqt>;
+            bindings = <&less_equal_mm>, <&lt_dqt>;
         };
         lt_dqt: lessthan_doublequote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LT>, <&kp DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        less_equal_mm: less_equal_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&less_equal>, <&less_equal_spaces>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         pipe_quest: pipe_quest {
@@ -537,11 +549,11 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             display-name = "SYMBOLS";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │  x   │  >  │  7  │  8  │  9  │ @ ^ │                ┃  ↑  ┃         │  &  │  (  │  )  │  {  │  }  │ BKSP │
+            // │  x   │ > ' │  7  │  8  │  9  │ @ ^ │                ┃  ↑  ┃         │  &  │  (  │  )  │  {  │  }  │ BKSP │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │ TAB  │  .  │  1  │  2  │  3  │  #  │          ┃  ←  ┃enter┃  →  ┃   │  =  │  -  │  +  │  /  │  *  │ ENT  │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │  <  │  4  │  5  │  6  │ $ % │ ┃MUTE┃         ┃  ↓  ┃         │ ! \ │  _  │ , ` │ . ~ │ | ? │ Comp │
+            // │      │ < " │  4  │  5  │  6  │ $ % │ ┃MUTE┃         ┃  ↓  ┃         │ ! \ │  _  │ , ` │ . ~ │ | ? │ Comp │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │     │Sft/0│     │                        │     │     │     │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
@@ -549,7 +561,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             bindings = <
 &kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp AMPS     &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
 &kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp EQUAL    &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR &kp ENTER
-&none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &excl_bslsh  &kp UNDER     &kp LBKT     &kp RBKT     &pipe_quest &kp RGUI
+&none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &kp LBKT     &kp RBKT     &pipe_quest &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
