@@ -178,6 +178,11 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp SPC &kp AMPS &kp AMPS &kp SPC>;
         };
+        lpar_rpar: lpar_rpar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>;
+        };
         // Help macros
         help_main: help_main {
             compatible = "zmk,behavior-macro";
@@ -489,6 +494,13 @@
             bindings = <&not_equal>, <&not_equal_spaces>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        ht_lpar: ht_lpar {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&lpar_rpar>, <&kp>;
+        };
         slsh_bslsh: slash_bslash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -728,7 +740,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
+&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
 &kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR &kp ENTER
 &none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &kp LBKT     &kp RBKT     &pipe_quest &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
