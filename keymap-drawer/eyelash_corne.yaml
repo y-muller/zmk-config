@@ -358,7 +358,7 @@ combos:
   k: '&help_symbols'
   l: [SYMBOLS]
 - p: [32, 37]
-  k: '&help_fund'
+  k: '&help_func'
   l: [FUNC]
 - p: [32, 37]
   k: '&help_media'
