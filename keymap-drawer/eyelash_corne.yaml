@@ -345,3 +345,6 @@ combos:
 - p: [0, 1]
   k: {t: MEDIA, h: toggle}
   l: [COLEMAK, MEDIA]
+- p: [32, 37]
+  k: '&help_main'
+  l: [COLEMAK]
