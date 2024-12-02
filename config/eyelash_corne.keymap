@@ -118,6 +118,14 @@
             bindings = <&macro_tap &kp ESC &kp COLON>;
         };
         // Symbols macros
+        c_comment: c_comment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SLASH &kp STAR &kp SPACE &kp SPACE &kp STAR &kp SLASH>
+                , <&macro_tap &kp LEFT &kp LEFT &kp LEFT>
+                ;
+        };
         greater_equal: greater_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -572,6 +580,13 @@
             hold-trigger-key-positions = <KEYS_RIGHT KEYS_THUMBS KEYS_5WAY>;
             hold-trigger-on-release;             // delay positional check until key-release
         };
+        ht_hash: ht_hash {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&c_comment>, <&kp>;
+        };
         hrr_slsh: home_row_right_slash {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -840,7 +855,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
 
             bindings = <
 &kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &ht_rpar 0 RPAR &ht_lbrc 0 LBRC &kp RBRC    &kp BSPC
-&kp TAB    &hrl_dot LGUI 0 &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr_slsh LALT 0 &hrr_star LGUI 0 &kp ENTER
+&kp TAB    &hrl_dot LGUI 0 &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &ht_hash 0 HASH      &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr_slsh LALT 0 &hrr_star LGUI 0 &kp ENTER
 &none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &ht_pipe 0 0 &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
             >;

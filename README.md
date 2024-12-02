@@ -23,10 +23,11 @@ a PR that might end up being merged in the original repo, or not!
 
 ##### What is missing so far
 - layout help combos
-- tmux mode
+- tmux mode (Ctrl-A prefix)
 - select mode
-- mod-morths on HRM of Symbols layer
+- Alt-Tab on Nav layer
 - layer locking (symbols, extend, media)
+- leader key
 - the keymap-drawer config is completely broken
 
 ![keymap](keymap-drawer/eyelash_corne.svg)
