@@ -99,7 +99,7 @@ layers:
   - END
   SYMBOLS:
   - X
-  - '>'
+  - '&ht_gt'
   - '7'
   - '8'
   - '9'
@@ -258,7 +258,7 @@ layers:
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
   - {h: '4', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - $$mdi:progress-download$$
+  - '&td_boot'
   - {type: none}
   - F1
   - F2
@@ -267,12 +267,12 @@ layers:
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
+  - RGB TOG
   - {type: none}
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
-  - $$mdi:progress-download$$
+  - '&td_boot'
   - {type: none}
   - {type: none}
   - F4
@@ -281,7 +281,7 @@ layers:
   - F10
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
-  - {type: none}
+  - SLEEP
   - {type: none}
   - {type: none}
   - {type: none}
