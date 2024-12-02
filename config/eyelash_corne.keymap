@@ -376,7 +376,7 @@
         help_main_altgr: help_main_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&help_main>, <&main_altgr>;
+            bindings = <&help_main>, <&help_altgr>;
             mods = <(MOD_LALT)>;
         };
         // Symbols mod-morphs and hold-taps
