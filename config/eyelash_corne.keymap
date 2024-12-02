@@ -564,7 +564,7 @@
         };
         combo_media {
             timeout-ms = <50>;
-            slow-release = "true";
+            slow-release;
             key-positions = <0 1>;
             bindings = <&tog MEDIA>;
             layers = <COLEMAK MEDIA>;
@@ -572,42 +572,42 @@
         // Help combos
         combo_help_main_altgr {
             timeout-ms = <50>;
-            slow-release = "true";
+            slow-release;
             key-positions = <32 37>;
             bindings = <&help_main_altgr>;
             layers = <COLEMAK>;
         };
         combo_help_extend {
             timeout-ms = <50>;
-            slow-release = "true";
+            slow-release;
             key-positions = <32 37>;
             bindings = <&help_extend>;
             layers = <EXTEND>;
         };
         combo_help_nav {
             timeout-ms = <50>;
-            slow-release = "true";
+            slow-release;
             key-positions = <32 37>;
             bindings = <&help_nav>;
             layers = <NAV>;
         };
         combo_help_symbols {
             timeout-ms = <50>;
-            slow-release = "true";
+            slow-release;
             key-positions = <32 37>;
             bindings = <&help_symbols>;
             layers = <SYMBOLS>;
         };
         combo_help_func {
             timeout-ms = <50>;
-            slow-release = "true";
+            slow-release;
             key-positions = <32 37>;
             bindings = <&help_func>;
             layers = <FUNC>;
         };
         combo_help_media {
             timeout-ms = <50>;
-            slow-release = "true";
+            slow-release;
             key-positions = <32 37>;
             bindings = <&help_media>;
             layers = <MEDIA>;
