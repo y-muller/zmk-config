@@ -151,7 +151,7 @@
         equal_spaces: equal_spaces {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kb SPC &kp EQUAL &kp SPC>;
+            bindings = <&macro_tap &kp SPC &kp EQUAL &kp SPC>;
         };
         equal_equal: equal_equal {
             compatible = "zmk,behavior-macro";
@@ -161,7 +161,7 @@
         equal_equal_spaces: equal_equal_spaces {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kb SPC &kp EQUAL &kp EQUAL &kp SPC>;
+            bindings = <&macro_tap &kp SPC &kp EQUAL &kp EQUAL &kp SPC>;
         };
     };
 
