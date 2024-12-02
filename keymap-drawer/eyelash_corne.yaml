@@ -112,7 +112,7 @@ layers:
   - '}'
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - {t: ., h: LGUI}
+  - {t: ., h: LGUI, s: ','}
   - {t: '1', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '2', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '3', h: '$$mdi:apple-keyboard-control$$'}
@@ -123,8 +123,8 @@ layers:
   - {t: '=', h: '&equal_equal', s: '&equal_spaces'}
   - {t: '-', h: '$$mdi:apple-keyboard-control$$'}
   - {t: +, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: /, h: '$$mdi:apple-keyboard-option$$', s: '?'}
-  - {t: '*', h: LGUI}
+  - {t: /, h: '$$mdi:apple-keyboard-option$$', s: \}
+  - {t: '*', h: LGUI, s: ':'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: none}
   - {t: <, h: '&less_equal', s: '"'}
