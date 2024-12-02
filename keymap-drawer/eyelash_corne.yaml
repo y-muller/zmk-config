@@ -116,7 +116,7 @@ layers:
   - {t: '1', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '2', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '3', h: '$$mdi:apple-keyboard-control$$'}
-  - '#'
+  - {t: '#', h: '&c_comment'}
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
