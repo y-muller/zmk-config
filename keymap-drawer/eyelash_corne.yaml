@@ -44,7 +44,7 @@ layers:
   - {t: '''', h: '$$mdi:apple-keyboard-option$$', s: '"'}
   - NAV
   - $$mdi:apple-keyboard-shift$$
-  - '&td_extcaps'
+  - {t: '&td_caps', h: EXTEND}
   - {t: '$$mdi:apple-keyboard-option$$', h: SYMBOLS}
   - $$mdi:keyboard-space$$
   - FUNC
@@ -191,7 +191,7 @@ layers:
   - GNOME
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held alternate}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -334,10 +334,10 @@ combos:
   k: CUT
   l: [COLEMAK]
 - p: [29, 30]
-  k: Ctl+ S
+  k: UNDO
   l: [COLEMAK]
 - p: [32, 33]
-  k: Ctl+ S
+  k: REDO
   l: [COLEMAK]
 - p: [8, 9]
   k: '&vimcmd'

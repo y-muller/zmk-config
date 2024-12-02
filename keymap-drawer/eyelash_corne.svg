@@ -561,8 +561,10 @@ rect.held, rect.combo.held {
 <g transform="translate(350, 232) rotate(24.0)" class="key keypos-44">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key"/>
-<text x="0" y="-4" class="key tap"><tspan style="font-size: 60%">&amp;td_extca…</tspan></text>
-</g>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 75%">&amp;td_caps</tspan></text>
+<a href="#EXTEND">
+<text x="0" y="24" class="key hold layer-activator">EXTEND</text>
+</a></g>
 <g transform="translate(590, 232) rotate(-24.0)" class="key keypos-45">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key"/>
@@ -638,15 +640,11 @@ rect.held, rect.combo.held {
 </g>
 <g class="combo combopos-12">
 <rect rx="6" ry="6" x="100" y="143" width="28" height="26" class="combo"/>
-<text x="114" y="156" class="combo tap">
-<tspan x="114" dy="-0.6em">Ctl+</tspan><tspan x="114" dy="1.2em">S</tspan>
-</text>
+<text x="114" y="156" class="combo tap">UNDO</text>
 </g>
 <g class="combo combopos-13">
 <rect rx="6" ry="6" x="271" y="140" width="28" height="26" class="combo"/>
-<text x="285" y="153" class="combo tap">
-<tspan x="285" dy="-0.6em">Ctl+</tspan><tspan x="285" dy="1.2em">S</tspan>
-</text>
+<text x="285" y="153" class="combo tap">REDO</text>
 </g>
 <g class="combo combopos-14">
 <rect rx="6" ry="6" x="687" y="19" width="28" height="26" class="combo"/>
@@ -1407,10 +1405,9 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key trans"/>
 <text x="0" y="-4" class="key trans tap">▽</text>
 </g>
-<g transform="translate(350, 232) rotate(24.0)" class="key trans keypos-44">
-<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key trans side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key trans"/>
-<text x="0" y="-4" class="key trans tap">▽</text>
+<g transform="translate(350, 232) rotate(24.0)" class="key held alternate keypos-44">
+<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key held alternate side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key held alternate"/>
 </g>
 <g transform="translate(590, 232) rotate(-24.0)" class="key trans keypos-45">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key trans side"/>
