@@ -603,7 +603,7 @@
         combo_help_func {
             timeout-ms = <50>;
             key-positions = <32 37>;
-            bindings = <&help_fund>;
+            bindings = <&help_func>;
             layers = <FUNC>;
         };
         combo_help_media {
