@@ -658,6 +658,7 @@ rect.held, rect.combo.held {
 <path d="M465,149 l189,0" class="combo"/>
 <rect rx="6" ry="6" x="451" y="136" width="28" height="26" class="combo"/>
 <text x="465" y="149" class="combo tap"><tspan style="font-size: 60%">&amp;help_main</tspan></text>
+<text x="465" y="138" class="combo shifted"><tspan style="font-size: 60%">&amp;main_alt…</tspan></text>
 </g>
 </g>
 </g>
@@ -915,6 +916,12 @@ rect.held, rect.combo.held {
 <a href="#MEDIA">
 <text x="57" y="50" class="combo tap layer-activator">MEDIA</text>
 </a><text x="57" y="61" class="combo hold">toggle</text>
+</g>
+<g class="combo combopos-1">
+<path d="M465,149 l-189,0" class="combo"/>
+<path d="M465,149 l189,0" class="combo"/>
+<rect rx="6" ry="6" x="451" y="136" width="28" height="26" class="combo"/>
+<text x="465" y="149" class="combo tap"><tspan style="font-size: 60%">&amp;help_med…</tspan></text>
 </g>
 </g>
 </g>
@@ -1185,6 +1192,12 @@ rect.held, rect.combo.held {
 <text x="787" y="132" class="combo hold">\</text>
 <text x="787" y="110" class="combo shifted">|</text>
 </g>
+<g class="combo combopos-1">
+<path d="M465,149 l-189,0" class="combo"/>
+<path d="M465,149 l189,0" class="combo"/>
+<rect rx="6" ry="6" x="451" y="136" width="28" height="26" class="combo"/>
+<text x="465" y="149" class="combo tap"><tspan style="font-size: 60%">&amp;help_sym…</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 978)" class="layer-EXTEND">
@@ -1431,6 +1444,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key trans side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key trans"/>
 <text x="0" y="-4" class="key trans tap">▽</text>
+</g>
+<g class="combo combopos-0">
+<path d="M465,149 l-189,0" class="combo"/>
+<path d="M465,149 l189,0" class="combo"/>
+<rect rx="6" ry="6" x="451" y="136" width="28" height="26" class="combo"/>
+<text x="465" y="149" class="combo tap"><tspan style="font-size: 60%">&amp;help_ext…</tspan></text>
 </g>
 </g>
 </g>
@@ -1714,6 +1733,12 @@ rect.held, rect.combo.held {
 <tspan x="0" dy="-0.6em" style="font-size: 60%">Alt+</tspan><tspan x="0" dy="1.2em" style="font-size: 60%">$$mdi:arr…</tspan>
 </text>
 </g>
+<g class="combo combopos-0">
+<path d="M465,149 l-189,0" class="combo"/>
+<path d="M465,149 l189,0" class="combo"/>
+<rect rx="6" ry="6" x="451" y="136" width="28" height="26" class="combo"/>
+<text x="465" y="149" class="combo tap"><tspan style="font-size: 67%">&amp;help_nav</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 1630)" class="layer-FUNC">
@@ -1952,6 +1977,12 @@ rect.held, rect.combo.held {
 <g transform="translate(712, 206)" class="key held keypos-47">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key held side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key held"/>
+</g>
+<g class="combo combopos-0">
+<path d="M465,149 l-189,0" class="combo"/>
+<path d="M465,149 l189,0" class="combo"/>
+<rect rx="6" ry="6" x="451" y="136" width="28" height="26" class="combo"/>
+<text x="465" y="149" class="combo tap"><tspan style="font-size: 60%">&amp;help_fund</tspan></text>
 </g>
 </g>
 </g>
