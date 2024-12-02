@@ -346,11 +346,11 @@ combos:
   k: {t: MEDIA, h: toggle}
   l: [COLEMAK, MEDIA]
 - p: [32, 37]
-  k: {t: '&help_main', s: '&help_altgr'}
-  l: [COLEMAK]
-- p: [32, 37]
   k: '&help_extend'
   l: [EXTEND]
+- p: [32, 37]
+  k: {t: '&help_main', s: '&help_altgr'}
+  l: [COLEMAK]
 - p: [32, 37]
   k: '&help_nav'
   l: [NAV]
