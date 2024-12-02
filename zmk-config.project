@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="zmk-config" Version="11000" InternalType="">
+  <VirtualDirectory Name="docs">
+    <File Name="README.md"/>
+  </VirtualDirectory>
   <VirtualDirectory Name="config">
     <File Name="config/eyelash_corne.json"/>
     <File Name="keymap_drawer.config.yaml"/>

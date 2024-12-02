@@ -10,7 +10,7 @@ at this time.
 
 ## Corne-j
 
-This will be my first ZMK keyboard.
+This is my first ZMK keyboard.
 
 This keyboard is sold by several Chinese vendors, under different names. Despite the
 name it has little to do with the original Corne. The layout is very similar, but adds
@@ -20,6 +20,14 @@ screens that are compatible with the nice!view.
 The config repository provided by the seller is a bit messy so I use this 
 [module](https://github.com/lesshonor/eyelash-corne-module) by lesshonor. There is
 a PR that might end up being merged in the original repo, or not!
+
+##### What is missing so far
+- layout help combos
+- tmux mode
+- select mode
+- most of the long press macros in Symbols layer
+- layer locking (symbols, extend, media)
+
 
 ![keymap](keymap-drawer/eyelash_corne.svg)
 

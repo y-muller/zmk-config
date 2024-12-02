@@ -570,19 +570,19 @@
             layers = <COLEMAK MEDIA>;
         };
         // Help combos
-        combo_help_main_altgr {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <32 37>;
-            bindings = <&help_main_altgr>;
-            layers = <COLEMAK>;
-        };
         combo_help_extend {
             timeout-ms = <50>;
             slow-release;
             key-positions = <32 37>;
             bindings = <&help_extend>;
             layers = <EXTEND>;
+        };
+        combo_help_main_altgr {
+            timeout-ms = <50>;
+            slow-release;
+            key-positions = <32 37>;
+            bindings = <&help_main_altgr>;
+            layers = <COLEMAK>;
         };
         combo_help_nav {
             timeout-ms = <50>;
