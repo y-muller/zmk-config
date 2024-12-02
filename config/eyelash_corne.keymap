@@ -117,10 +117,16 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp ESC &kp COLON>;
         };
+        // Symbols macros
         greater_equal: greater_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp GT &kp EQUAL>;
+        };
+        less_equal: less_equal{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LT &kp EQUAL>;
         };
     };
 
@@ -295,6 +301,19 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp GT>, <&kp SQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ht_lt: ht_lt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&less_equal>, <&gt_dqt>;
+        };
+        gt_sqt: lessthan_doublequote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LT>, <&kp DQT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -480,9 +499,9 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &ht_gt        &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp AMPS     &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
+&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp AMPS     &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
 &kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp EQUAL    &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR &kp ENTER
-&none      &kp LT        &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &excl_bslsh  &kp UNDER     &kp LBKT     &kp RBKT     &pipe_quest &kp RGUI
+&none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &excl_bslsh  &kp UNDER     &kp LBKT     &kp RBKT     &pipe_quest &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
