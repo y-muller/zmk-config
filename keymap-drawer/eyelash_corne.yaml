@@ -108,7 +108,7 @@ layers:
   - {t: '&', h: '&amps_amps', s: '&amps_spaces'}
   - {t: (, h: '&lpar_rpar'}
   - )
-  - '{'
+  - {t: '{', h: '&lbrc_rbrc'}
   - '}'
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
@@ -136,7 +136,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - {t: '!', h: '&not_equal', s: \}
   - _
-  - {t: '[', s: '{'}
+  - {t: '[', h: '&lbkt_rbkt', s: '{'}
   - {t: ']', s: '}'}
   - {t: '|', s: '?'}
   - RGUI
