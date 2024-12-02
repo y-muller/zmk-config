@@ -107,7 +107,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - {t: '&', h: '&amps_amps', s: '&amps_spaces'}
   - {t: (, h: '&lpar_rpar'}
-  - )
+  - {t: ), h: '&rpar_newline'}
   - {t: '{', h: '&lbrc_rbrc'}
   - '}'
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -138,7 +138,7 @@ layers:
   - _
   - {t: '[', h: '&lbkt_rbkt', s: '{'}
   - {t: ']', s: '}'}
-  - {t: '|', s: '?'}
+  - {t: '|', h: '&pipe_pipe', s: '?'}
   - RGUI
   - {t: ▽, type: trans}
   - {t: '0', h: '$$mdi:apple-keyboard-shift$$'}
