@@ -27,7 +27,7 @@ a PR that might end up being merged in the original repo, or not!
 - select mode
 - most of the long press macros in Symbols layer
 - layer locking (symbols, extend, media)
-
+- the keymap-drawer config is completely broken
 
 ![keymap](keymap-drawer/eyelash_corne.svg)
 

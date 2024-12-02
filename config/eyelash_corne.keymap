@@ -163,6 +163,21 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp SPC &kp EQUAL &kp EQUAL &kp SPC>;
         };
+        amps_spaces: amps_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp SPC &kp AMPS &kp SPC>;
+        };
+        amps_amps: amps_amps {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp AMPS &kp AMPS>;
+        };
+        amps_amps_spaces: amps_amps_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp SPC &kp AMPS &kp AMPS &kp SPC>;
+        };
         // Help macros
         help_main: help_main {
             compatible = "zmk,behavior-macro";
@@ -186,9 +201,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp A>
+                = <&macro_tap &kp INTERNATIONAL_2>
                 , <&macro_pause_for_release>
-                , <&macro_tap &kp B>
+                , <&macro_tap &kp LANGUAGE_9>
                 ;
         };
         help_nav: help_nav {
@@ -417,6 +432,44 @@
             bindings = <&kp PIPE>, <&kp QUESTION>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        ht_equl: ht_equal {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&equal_equal_mm>, <&equal_mm>;
+        };
+        equal_mm: equal_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&equal_spaces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        equal_equal_mm: equal_equal_morph{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&equal_equal>, <&equal_equal_spaces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ht_amps: ht_amps {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&amps_amps_mm>, <&amps_mm>;
+        };
+        amps_mm: amps_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&amps_spaces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        amps_amps_mm: amps_amps_morph{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&amps_amps>, <&amps_amps_spaces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         ht_excl: ht_exclam {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -570,19 +623,19 @@
             layers = <COLEMAK MEDIA>;
         };
         // Help combos
-        combo_help_extend {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <32 37>;
-            bindings = <&help_extend>;
-            layers = <EXTEND>;
-        };
         combo_help_main_altgr {
             timeout-ms = <50>;
             slow-release;
             key-positions = <32 37>;
             bindings = <&help_main_altgr>;
             layers = <COLEMAK>;
+        };
+        combo_help_extend {
+            timeout-ms = <50>;
+            slow-release;
+            key-positions = <32 37>;
+            bindings = <&help_extend>;
+            layers = <EXTEND>;
         };
         combo_help_nav {
             timeout-ms = <50>;
@@ -675,8 +728,8 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &kp AMPS     &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
-&kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &kp EQUAL    &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR &kp ENTER
+&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &kp LPAR      &kp RPAR     &kp LBRC     &kp RBRC    &kp BSPC
+&kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR &kp ENTER
 &none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &kp LBKT     &kp RBKT     &pipe_quest &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
             >;
