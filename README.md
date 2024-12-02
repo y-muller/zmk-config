@@ -25,7 +25,7 @@ a PR that might end up being merged in the original repo, or not!
 - layout help combos
 - tmux mode
 - select mode
-- most of the long press macros in Symbols layer
+- mod-morths on HRM of Symbols layer
 - layer locking (symbols, extend, media)
 - the keymap-drawer config is completely broken
 
