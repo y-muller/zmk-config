@@ -134,7 +134,7 @@ layers:
   - {t: $, s: '%'}
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
-  - {t: '!', s: \}
+  - {t: '!', h: '&not_equal', s: \}
   - _
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
