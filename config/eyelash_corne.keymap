@@ -123,10 +123,45 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp GT &kp EQUAL>;
         };
-        less_equal: less_equal{
+        greater_equal_spaces: greater_equal_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap  &kp SPC &kp GT &kp EQUAL &kp SPC>;
+        };
+        less_equal: less_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LT &kp EQUAL>;
+        };
+        less_equal_spaces: less_equal_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp SPC &kp LT &kp EQUAL &kp SPC>;
+        };
+        not_equal: not_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EXCL &kp EQUAL>;
+        };
+        not_equal_spaces: not_equal_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kb SPC &kp EXCL &kp EQUAL &kp SPC>;
+        };
+        equal_spaces: equal_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kb SPC &kp EQUAL &kp SPC>;
+        };
+        equal_equal: equal_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EQUAL &kp EQUAL>;
+        };
+        equal_equal_spaces: equal_equal_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kb SPC &kp EQUAL &kp EQUAL &kp SPC>;
         };
     };
 
@@ -241,30 +276,6 @@
             bindings = <&kp DOLLAR>, <&kp PERCENT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        pipe_quest: pipe_quest {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PIPE>, <&kp QUESTION>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        excl_bslsh: exclam_bslash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp BACKSLASH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        slsh_bslsh: slash_bslash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SLASH>, <&kp BACKSLASH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        star_col: star_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp STAR>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
         srch_prv: search_prev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -314,6 +325,43 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LT>, <&kp DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        pipe_quest: pipe_quest {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ht_excl: ht_exclam {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&not_equal_mm>, <&excl_bslsh>;
+        };
+        excl_bslsh: exclam_bslash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        not_equal_mm: not_equal_morph{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&not_equal>, <&not_equal_spaces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        slsh_bslsh: slash_bslash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        star_col: star_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp STAR>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
