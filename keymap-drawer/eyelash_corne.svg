@@ -970,6 +970,8 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key"/>
 <text x="0" y="-4" class="key tap">&amp;</text>
+<text x="0" y="24" class="key hold"><tspan style="font-size: 60%">&amp;amps_amps</tspan></text>
+<text x="0" y="-24" class="key shifted"><tspan style="font-size: 60%">&amp;amps_spa…</tspan></text>
 </g>
 <g transform="translate(673, 35)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
@@ -1049,6 +1051,8 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key"/>
 <text x="0" y="-4" class="key tap">=</text>
+<text x="0" y="24" class="key hold"><tspan style="font-size: 60%">&amp;equal_eq…</tspan></text>
+<text x="0" y="-24" class="key shifted"><tspan style="font-size: 60%">&amp;equal_sp…</tspan></text>
 </g>
 <g transform="translate(673, 92)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
