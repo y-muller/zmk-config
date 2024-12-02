@@ -183,6 +183,11 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>;
         };
+        rpar_newline: rpar_newline {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp RPAR &kp SEMI &kp ENTER>;
+        };
         lbrc_rbrc: lbrc_rbrc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -192,6 +197,16 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LBKT &kp RBKT &kp LEFT>;
+        };
+        pipe_pipe: pipe_pipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp PIPE &kp PIPE>;
+        };
+        pipe_pipe_spaces: pipe_pipe_spaces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp SPC &kp PIPE &kp PIPE &kp SPC>;
         };
         // Help macros
         help_main: help_main {
@@ -441,6 +456,19 @@
             bindings = <&less_equal>, <&less_equal_spaces>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        ht_pipe: ht_pipe {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&pipe_mm>, <&pipe_quest>;
+        };
+        pipe_mm: pipe_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&pipe_pipe>, <&pipe_pipe_spaces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         pipe_quest: pipe_quest {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -510,6 +538,13 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             bindings = <&lpar_rpar>, <&kp>;
+        };
+        ht_rpar: ht_rpar {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&rpar_newline>, <&kp>;
         };
         ht_lbrc: ht_lbrc {
             compatible = "zmk,behavior-hold-tap";
@@ -764,9 +799,9 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &kp RPAR &ht_lbrc 0 LBRC &kp RBRC    &kp BSPC
+&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &ht_rpar 0 RPAR &ht_lbrc 0 LBRC &kp RBRC    &kp BSPC
 &kp TAB    &hrl LGUI DOT &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &kp HASH               &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr LALT SLASH &hrr LGUI STAR &kp ENTER
-&none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &pipe_quest &kp RGUI
+&none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &ht_pipe 0 0 &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
