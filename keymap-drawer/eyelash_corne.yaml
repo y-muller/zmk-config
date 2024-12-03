@@ -62,7 +62,7 @@ layers:
   - $$mdi:mouse-right-click-outline$$
   - {type: none}
   - PG UP
-  - {type: none}
+  - {t: ▽, type: trans}
   - {type: none}
   - $$mdi:brightness-7$$
   - $$mdi:brightness-5$$
