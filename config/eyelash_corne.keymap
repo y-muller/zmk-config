@@ -79,11 +79,11 @@
 
 / {
     macros {
-        // Sticky Alt-tab to swap to the previous window instead of cycling through
+        // Single Alt-tab to swap to the previous window instead of cycling through
         prv_wnd: previous_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &sk RALT &kp TAB>;
+            bindings = <&macro_tap &kp A(TAB)>;
         };
         // Layer lock, sort-of
         llock: layer_lock {
