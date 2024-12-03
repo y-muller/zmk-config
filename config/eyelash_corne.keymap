@@ -83,7 +83,10 @@
         prv_wnd: previous_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp A(TAB)>;
+            bindings = 
+                <&macro_press &bk LALT>,
+                <&macro_tap &kp TAB>,
+                <&macro_release &kp LALT>;
         };
         // Layer lock, sort-of
         llock: layer_lock {
