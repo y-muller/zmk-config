@@ -78,6 +78,17 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &sk RALT &kp TAB>;
         };
+        // Layer lock, sort-of
+        llock: layer_lock {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_pause_for_release>,
+                <&macro_param_1to1>,
+                <&macro_tap &tog MACRO_PLACEHOLDER>;
+        };
         macro_qu: macro_qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -862,7 +873,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             bindings = <
 &kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &ht_rpar 0 RPAR &ht_lbrc 0 LBRC &kp RBRC    &kp BSPC
 &kp TAB    &hrl_dot LGUI 0 &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &ht_hash 0 HASH      &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr_slsh LALT 0 &hrr_star LGUI 0 &kp ENTER
-&none      &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &ht_pipe 0 0 &kp RGUI
+&llock SYMBOLS &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &ht_pipe 0 0 &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
