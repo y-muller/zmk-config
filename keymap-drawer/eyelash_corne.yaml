@@ -268,8 +268,8 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
   - RGB TOG
-  - {type: none}
-  - {type: none}
+  - RGB BRD
+  - RGB BRI
   - {type: none}
   - {type: none}
   - '&td_boot'
