@@ -56,7 +56,7 @@ layers:
   - $$mdi:microphone-off$$
   - F5
   - $$mdi:pan-up$$
-  - {t: MEDIA, h: toggle}
+  - '&llock 1'
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-right-click-outline$$
@@ -175,7 +175,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {type: none}
+  - '&llock 3'
   - UNDO
   - CUT
   - COPY
