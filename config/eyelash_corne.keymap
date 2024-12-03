@@ -284,7 +284,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp INTERNATIONAL_4>
+                = <&macro_tap &kp INTERNATIONAL_5>
                 , <&macro_pause_for_release>
                 , <&macro_tap &kp LANGUAGE_9>
                 ;
@@ -293,7 +293,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp INTERNATIONAL_5>
+                = <&macro_tap &kp INTERNATIONAL_4>
                 , <&macro_pause_for_release>
                 , <&macro_tap &kp LANGUAGE_9>
                 ;
@@ -450,7 +450,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&help_main>, <&help_altgr>;
-            mods = <(MOD_LALT)>;
+            mods = <(MOD_RALT)>;
         };
         // Symbols mod-morphs and hold-taps
         ht_gt: ht_gt {
