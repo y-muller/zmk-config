@@ -18,13 +18,13 @@ The config repository provided by the seller is a bit messy so I use this
 [module](https://github.com/lesshonor/eyelash-corne-module) by lesshonor. There is
 a PR that might end up being merged in the original repo, or not!
 
-##### What is missing so far
+##### What is missing or broken so far
 - layout help combos
 - tmux mode (Ctrl-A prefix)
 - select mode
 - Alt-Tab on Nav layer
-- layer locking (symbols, extend, media)
 - leader key
+- layer locking is rather awkward (symbols, extend, media)
 - the keymap-drawer config is completely broken
 
 ![keymap](keymap-drawer/eyelash_corne.svg)

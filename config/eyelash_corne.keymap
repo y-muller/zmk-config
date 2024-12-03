@@ -70,6 +70,13 @@
 #define APP_SCRP &kp LC(LG(X))
 #define APP_TRSM &kp LC(LG(O))
 
+/* Awkward layer lock */
+/* Lock: press lock key, release mo layer, release lock */
+/* Unlock: tap lock key */
+#define LOCK_SYM &llock SYMBOLS
+#define LOCK_EXT &llock EXTEND
+#define LOCK_MED &llock MEDIA
+
 / {
     macros {
         // Sticky Alt-tab to swap to the previous window instead of cycling through
@@ -849,7 +856,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &kp F20       &kp F5                        U_WH_U             &tog MEDIA    &mkp LCLK    U_MS_U      &mkp RCLK    &none       &kp PG_UP
+&kp ESC    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &kp F20       &kp F5                        U_WH_U             LOCK_MED      &mkp LCLK    U_MS_U      &mkp RCLK    &none       &kp PG_UP
 &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none         &none                 U_WH_L  &kp ENTER  U_WH_R  &kp LC(PLUS)  U_MS_L       U_MS_D      U_MS_R       &kp UP      &kp PG_DN
 &none      &kp C_PLAY   &kp C_STOP   &kp C_PREV    &kp C_NEXT    &none      &kp SPACE          U_WH_D             &kp LC(MINUS) &mkp MCLK    &none       &kp LEFT     &kp DOWN    &kp RIGHT
                                                   &trans   &trans  &trans                                     &kp HOME   &trans  &kp END
@@ -873,7 +880,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             bindings = <
 &kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &ht_rpar 0 RPAR &ht_lbrc 0 LBRC &kp RBRC    &kp BSPC
 &kp TAB    &hrl_dot LGUI 0 &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &ht_hash 0 HASH      &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr_slsh LALT 0 &hrr_star LGUI 0 &kp ENTER
-&llock SYMBOLS &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &ht_pipe 0 0 &kp RGUI
+LOCK_SYM   &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &ht_pipe 0 0 &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -895,7 +902,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             bindings = <
 &none       &kp ESC      &kp LC(W)    &kp LC(F)     &none         &kp INS                         &kp UP                 &kp HOME     &kp PGUP      &kp UP       &kp PGDN   &none       &kp DEL
 &prv_wnd    &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp END      &kp LEFT      &kp DOWN     &kp RIGHT  &kp BSPC    &kp ENTER
-&none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &kp LS(TAB)  &kp TAB       &none        &none      &kp DEL     &kp F17
+LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &kp LS(TAB)  &kp TAB       &none        &none      &kp DEL     &kp F17
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
