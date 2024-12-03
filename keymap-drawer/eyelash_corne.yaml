@@ -160,7 +160,7 @@ layers:
   - PGDN
   - {type: none}
   - $$mdi:backspace-reverse-outline$$
-  - {t: 'Alt+ $$mdi:keyboard-tab$$', type: held}
+  - {t: '&prv_wnd', type: held}
   - {t: LGUI, h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
