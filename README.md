@@ -5,9 +5,6 @@ This repo contains configuration files for keyboards using the ZMK firmware.
 I am slowly trying to replicate the keymap I use on
 [my QMK keyboards](https://github.com/y-muller/personal_configs/blob/main/qmk_keyboards/CORNE42.md).
 
-I have one keyboard on order, so I don't even have a keyboard to test
-at this time.
-
 ## Corne-j
 
 This is my first ZMK keyboard.
