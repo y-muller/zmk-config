@@ -72,6 +72,12 @@
 
 / {
     macros {
+        // Sticky Alt-tab to swap to the previous window instead of cycling through
+        prv_wnd: previous_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &sk RALT &kp TAB>;
+        };
         macro_qu: macro_qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -877,7 +883,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
 
             bindings = <
 &none       &kp ESC      &kp LC(W)    &kp LC(F)     &none         &kp INS                         &kp UP                 &kp HOME     &kp PGUP      &kp UP       &kp PGDN   &none       &kp DEL
-&kp LA(TAB) &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp END      &kp LEFT      &kp DOWN     &kp RIGHT  &kp BSPC    &kp ENTER
+&prv_wnd    &sk LGUI     &sk LALT     &sk LSHFT     &sk LCTRL     &none                 &kp LEFT  &kp ENTER  &kp RIGHT   &kp END      &kp LEFT      &kp DOWN     &kp RIGHT  &kp BSPC    &kp ENTER
 &none       &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp SPACE            &kp DOWN               &kp LS(TAB)  &kp TAB       &none        &none      &kp DEL     &kp F17
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
             >;
