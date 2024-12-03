@@ -126,7 +126,7 @@ layers:
   - {t: /, h: '$$mdi:apple-keyboard-option$$', s: \}
   - {t: '*', h: LGUI, s: ':'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {type: none}
+  - '&llock 2'
   - {t: <, h: '&less_equal', s: '"'}
   - '4'
   - '5'
