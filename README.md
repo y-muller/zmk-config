@@ -14,9 +14,7 @@ name it has little to do with the original Corne. The layout is very similar, bu
 a rotary encoder on the left side and a five-way switch on the right. It has two low-power
 screens that are compatible with the nice!view.
 
-The config repository provided by the seller is a bit messy so I use this 
-[module](https://github.com/lesshonor/eyelash-corne-module) by lesshonor. There is
-a PR that might end up being merged in the original repo, or not!
+I am using this [module](https://github.com/a741725193/zmk-new_corne).
 
 ##### What is missing or broken so far
 - tmux mode (Ctrl-A prefix)
