@@ -112,8 +112,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp DOT &kp DOT &kp SLASH>
+                = <&macro_tap &kp DOT &kp DOT &kp SLASH>
                 ;
         };
         home_dir: home_dir {
@@ -133,8 +132,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp TILDE &kp SLASH>
+                = <&macro_tap &kp TILDE &kp SLASH>
                 , <&macro_tap &kp W &kp O &kp R &kp K &kp S &kp P &kp A &kp C &kp E>
                 , <&macro_tap &kp SLASH>
                 ;
