@@ -15,5 +15,6 @@ manifest:
       import: app/west.yml
     - name: zmk-new_corne
       remote: eyelash
+      revision: main
   self:
     path: config
