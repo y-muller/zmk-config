@@ -112,7 +112,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp DOT &kp DOT &kp SLASH>
+                = <&macro_release &kp LSHFT>
+                , <&macro_tap &kp DOT &kp DOT &kp SLASH>
                 ;
         };
         home_dir: home_dir {
@@ -132,7 +133,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp TILDE &kp SLASH>
+                = <&macro_release &kp LSHFT>
+                , <&macro_tap &kp TILDE &kp SLASH>
                 , <&macro_tap &kp W &kp O &kp R &kp K &kp S &kp P &kp A &kp C &kp E>
                 , <&macro_tap &kp SLASH>
                 ;
@@ -184,7 +186,9 @@
         equal_spaces: equal_spaces {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp SPC &kp EQUAL &kp SPC>;
+            bindings = 
+                <&macro_release &kp LSHFT>,
+                <&macro_tap &kp SPC &kp EQUAL &kp SPC>;
         };
         equal_equal: equal_equal {
             compatible = "zmk,behavior-macro";
