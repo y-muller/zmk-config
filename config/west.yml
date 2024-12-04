@@ -6,15 +6,14 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: petejohanson
       url-base: https://github.com/petejohanson
-    - name: lesshonor
-      url-base: https://github.com/lesshonor
+    - name: eyelash
+      url-base: https://github.com/a741725193
   projects:
     - name: zmk
       remote: petejohanson
       revision: feat/pointers-with-input-processors
       import: app/west.yml
-    - name: eyelash-corne-module
-      remote: lesshonor
-      revision: refactor
+    - name: zmk-new_corne
+      remote: eyelash
   self:
     path: config
