@@ -46,7 +46,7 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - {t: '&td_caps', h: EXTEND}
   - {t: '$$mdi:apple-keyboard-option$$', h: SYMBOLS}
-  - $$mdi:keyboard-space$$
+  - {t: SPC, h: TMUX}
   - FUNC
   MEDIA:
   - {t: '$$mdi:keyboard-esc$$', type: held}
@@ -293,6 +293,55 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
+  TMUX:
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - '&tm_pw'
+  - {type: none}
+  - '&tm_nw'
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: held}
+  - {type: none}
 combos:
 - p: [14, 29]
   k: '&macro_qu'
