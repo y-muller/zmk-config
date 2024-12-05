@@ -313,7 +313,7 @@
         };
 
         // TMUX macros
-        tm_pw: tmux_previous_window {
+        tm_n: tmux_n {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -321,12 +321,52 @@
                 , <&macro_tap &kp N>
                 ;
         };
-        tm_nw: tmux_next_window {
+        tm_i: tmux_i {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
                 , <&macro_tap &kp I>
+                ;
+        };
+        tm_u: tmux_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp U>
+                ;
+        };
+        tm_e: tmux_e {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp E>
+                ;
+        };
+        tm_l: tmux_l {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp L>
+                ;
+        };
+        tm_y: tmux_y {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp Y>
+                ;
+        };
+        tm_z: tmux_z {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp Z>
                 ;
         };
         tm_cm: tmux_copy_mode {
@@ -1013,19 +1053,19 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
             display-name = "TMUX";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │      │     │Lst W│     │     │     │                ┃  ↑  ┃         │     │     │     │     │     │      │
+            // │      │     │Lst W│     │     │     │                ┃  ↑  ┃         │     │Mv L │ Up  │Mv R │     │      │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │     │Rload│     │     │     │          ┃  ←  ┃     ┃  →  ┃   │     │Prv W│     │Nxt W│     │      │
+            // │      │     │Rload│     │     │     │          ┃  ←  ┃     ┃  →  ┃   │     │ Prv │ Dwn │ Nxt │     │      │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │     │     │Crt W│     │     │ ┃    ┃         ┃  ↓  ┃         │     │CopyM│     │     │     │      │
+            // │      │P Exp│     │Crt W│     │     │ ┃    ┃         ┃  ↓  ┃         │     │CopyM│     │     │     │      │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │     │     │     │                        │     │     │     │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&none       &none        &tm_lsw      &none         &none         &none                         &none                   &none    &none    &none     &none     &none     &none
-&none       &none        &tm_rcnf     &none         &none         &none               &none     &none       &none       &none    &tm_pw   &none     &tm_nw    &none     &none
-&trans      &none        &none        &tm_cw        &none         &none  &none                  &none                   &none    &tm_cm   &none     &none     &none     &none
+&none       &none        &tm_lsw      &none         &none         &none                         &none                   &none    &tm_l    &tm_u     &tm_y     &none     &none
+&none       &kp LGUI     &tm_rcnf     &none         &kp LCTL      &none               &none     &none       &none       &none    &tm_n    &tm_e     &tm_i     &none     &none
+&trans      &tm_z        &none        &tm_cw        &none         &none  &none                  &none                   &none    &tm_cm   &none     &none     &none     &none
                                                   &none   &none  &none                                           &none   &none  &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
