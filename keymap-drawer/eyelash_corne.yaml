@@ -322,6 +322,7 @@ layers:
   - '&tm_nw'
   - {type: none}
   - {type: none}
+  - {t: ▽, type: trans}
   - {type: none}
   - {type: none}
   - {type: none}
@@ -330,8 +331,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
-  - {type: none}
+  - '&tm_cm'
   - {type: none}
   - {type: none}
   - {type: none}
