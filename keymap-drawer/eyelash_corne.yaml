@@ -310,7 +310,7 @@ layers:
   - {type: none}
   - LGUI
   - '&tm_rcnf'
-  - {type: none}
+  - $$mdi:apple-keyboard-option$$
   - LCTL
   - {type: none}
   - {type: none}
