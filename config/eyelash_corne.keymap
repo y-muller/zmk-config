@@ -329,6 +329,38 @@
                 , <&macro_tap &kp I>
                 ;
         };
+        tm_cm: tmux_copy_mode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp LBKT>
+                ;
+        };
+        tm_cw: tmux_create_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp C>
+                ;
+        };
+        tm_lsw: tmux_list_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp W>
+                ;
+        };
+        tm_rcnf: tmux_reload_config {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp R>
+                ;
+        };
         
     };
 
@@ -981,11 +1013,11 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
             display-name = "TMUX";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │      │     │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │BTrst│ BT1 │ BT2 │ BT3 │ BT4 │RESET │
+            // │      │     │Lst W│     │     │     │                ┃  ↑  ┃         │     │     │     │     │     │      │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ BOOT │     │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │ BOOT │
+            // │      │     │Rload│     │     │     │          ┃  ←  ┃     ┃  →  ┃   │     │Prv W│     │Nxt W│     │      │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │     │ F4  │ F5  │ F6  │ F10 │ ┃MUTE┃         ┃  ↓  ┃         │SLEEP│     │     │     │     │      │
+            // │      │     │     │Crt W│     │     │ ┃    ┃         ┃  ↓  ┃         │     │CopyM│     │     │     │      │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │     │     │     │                        │     │     │     │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
@@ -993,14 +1025,14 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
             bindings = <
 &none       &none        &none        &none         &none         &none                         &none                   &none    &none    &none     &none     &none     &none
 &none       &none        &none        &none         &none         &none               &none     &none       &none       &none    &tm_pw   &none     &tm_nw    &none     &none
-&none       &none        &none        &none         &none         &none  &none                  &none                   &none    &none    &none     &none     &none     &none
+&trans      &none        &none        &none         &none         &none  &none                  &none                   &none    &tm_cm   &none     &none     &none     &none
                                                   &none   &none  &none                                           &none   &none  &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
 /*
-        tmux_layer {
+        none_layer {
             display-name = "NONE";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
