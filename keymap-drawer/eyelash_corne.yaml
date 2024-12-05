@@ -296,6 +296,7 @@ layers:
   TMUX:
   - {type: none}
   - {type: none}
+  - '&tm_lsw'
   - {type: none}
   - {type: none}
   - {type: none}
@@ -308,8 +309,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
-  - {type: none}
+  - '&tm_rcnf'
   - {type: none}
   - {type: none}
   - {type: none}
@@ -325,7 +325,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: none}
   - {type: none}
-  - {type: none}
+  - '&tm_cw'
   - {type: none}
   - {type: none}
   - {type: none}

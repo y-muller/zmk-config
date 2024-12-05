@@ -2022,9 +2022,10 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key none"/>
 </g>
-<g transform="translate(142, 35)" class="key none keypos-2">
-<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key none"/>
+<g transform="translate(142, 35)" class="key keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key"/>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 86%">&amp;tm_lsw</tspan></text>
 </g>
 <g transform="translate(200, 28)" class="key none keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
@@ -2074,9 +2075,10 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key none"/>
 </g>
-<g transform="translate(142, 92)" class="key none keypos-15">
-<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key none"/>
+<g transform="translate(142, 92)" class="key keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key"/>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 75%">&amp;tm_rcnf</tspan></text>
 </g>
 <g transform="translate(200, 86)" class="key none keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
@@ -2141,9 +2143,10 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key none"/>
 </g>
-<g transform="translate(200, 142)" class="key none keypos-31">
-<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key none"/>
+<g transform="translate(200, 142)" class="key keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="41" height="41" class="key"/>
+<text x="0" y="-4" class="key tap">&amp;tm_cw</text>
 </g>
 <g transform="translate(256, 149)" class="key none keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="53" height="53" class="key none side"/>
