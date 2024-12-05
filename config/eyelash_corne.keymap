@@ -1023,9 +1023,9 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&none       &none        &none        &none         &none         &none                         &none                   &none    &none    &none     &none     &none     &none
-&none       &none        &none        &none         &none         &none               &none     &none       &none       &none    &tm_pw   &none     &tm_nw    &none     &none
-&trans      &none        &none        &none         &none         &none  &none                  &none                   &none    &tm_cm   &none     &none     &none     &none
+&none       &none        &tm_lsw      &none         &none         &none                         &none                   &none    &none    &none     &none     &none     &none
+&none       &none        &tm_rcnf     &none         &none         &none               &none     &none       &none       &none    &tm_pw   &none     &tm_nw    &none     &none
+&trans      &none        &none        &tm_cw        &none         &none  &none                  &none                   &none    &tm_cm   &none     &none     &none     &none
                                                   &none   &none  &none                                           &none   &none  &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
