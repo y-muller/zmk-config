@@ -1064,7 +1064,7 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
 
             bindings = <
 &none       &none        &tm_lsw      &none         &none         &none                         &none                   &none    &tm_l    &tm_u     &tm_y     &none     &none
-&none       &kp LGUI     &tm_rcnf     &none         &kp LCTL      &none               &none     &none       &none       &none    &tm_n    &tm_e     &tm_i     &none     &none
+&none       &kp LGUI     &tm_rcnf     &kp LALT      &kp LCTL      &none               &none     &none       &none       &none    &tm_n    &tm_e     &tm_i     &none     &none
 &trans      &tm_z        &none        &tm_cw        &none         &none  &none                  &none                   &none    &tm_cm   &none     &none     &none     &none
                                                   &none   &none  &none                                           &none   &none  &none
             >;
