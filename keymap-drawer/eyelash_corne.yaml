@@ -302,28 +302,28 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
+  - '&tm_l'
+  - '&tm_u'
+  - '&tm_y'
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
-  - {type: none}
-  - {type: none}
-  - {type: none}
+  - LGUI
   - '&tm_rcnf'
   - {type: none}
+  - LCTL
   - {type: none}
   - {type: none}
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
-  - '&tm_pw'
-  - {type: none}
-  - '&tm_nw'
+  - '&tm_n'
+  - '&tm_e'
+  - '&tm_i'
   - {type: none}
   - {type: none}
   - {t: ▽, type: trans}
-  - {type: none}
+  - '&tm_z'
   - {type: none}
   - '&tm_cw'
   - {type: none}
