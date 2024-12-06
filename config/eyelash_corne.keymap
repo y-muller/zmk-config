@@ -360,6 +360,20 @@
                 = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
                 , <&macro_tap &kp Y>
                 ;
+        tm_j: tmux_j {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp J>
+                ;
+        tm_m: tmux_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
+                , <&macro_tap &kp M>
+                ;
         };
         tm_z: tmux_z {
             compatible = "zmk,behavior-macro";
@@ -399,6 +413,42 @@
             bindings
                 = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
                 , <&macro_tap &kp R>
+                ;
+        };
+        tm_clft: tmux_ctrl_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LCTL>
+                ;
+        };
+        tm_crght: tmux_ctrl_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LCTL>
+                ;
+        };
+        tm_cup: tmux_ctrl_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>
+                , <&macro_tap &kp UP>
+                , <&macro_release &kp LCTL>
+                ;
+        };
+        tm_cdn: tmux_ctrl_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>, <&macro_tap &kp A>
+                , <&macro_tap &kp DOWN>
+                , <&macro_release &kp LCTL>
                 ;
         };
         
@@ -1057,16 +1107,16 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │      │     │Rload│     │     │     │          ┃  ←  ┃     ┃  →  ┃   │     │ Prv │ Dwn │ Nxt │     │      │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │      │P Exp│     │Crt W│     │     │ ┃    ┃         ┃  ↓  ┃         │     │CopyM│     │     │     │      │
+            // │ Zoom │P Exp│     │Crt W│     │     │ ┃    ┃         ┃  ↓  ┃         │     │CopyM│     │     │     │      │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
             //                        │     │     │     │                        │     │     │     │
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&none       &none        &tm_lsw      &none         &none         &none                         &none                   &none    &tm_l    &tm_u     &tm_y     &none     &none
-&none       &kp LGUI     &tm_rcnf     &kp LALT      &kp LCTL      &none               &none     &none       &none       &none    &tm_n    &tm_e     &tm_i     &none     &none
-&trans      &tm_z        &none        &tm_cw        &none         &none  &none                  &none                   &none    &tm_cm   &none     &none     &none     &none
-                                                  &none   &none  &none                                           &none   &none  &none
+&none       &none        &tm_lsw      &none         &none         &none                         &tm_cup                 &tm_j    &tm_l    &tm_u     &tm_y     &none     &none
+&none       &kp LGUI     &tm_rcnf     &kp LALT      &kp LCTL      &none               &tm_clft  &none       &tm_crght   &tm_m    &tm_n    &tm_e     &tm_i     &none     &none
+&trans      &tm_z        &none        &tm_cw        &none         &none  &none                  &tm_cdn                 &none    &tm_cm   &none     &none     &none     &none
+                                                  &none    &trans    &none                                           &none   &none  &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
