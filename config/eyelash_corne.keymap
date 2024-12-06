@@ -360,6 +360,7 @@
                 = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
                 , <&macro_tap &kp Y>
                 ;
+        };
         tm_j: tmux_j {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
