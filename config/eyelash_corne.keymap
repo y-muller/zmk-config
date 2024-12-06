@@ -51,10 +51,10 @@
 #define U_WH_R &msc SCRL_RIGHT
 
 #define SELECT &select SELECT1 COLEMAK
-#define SEL1_U &sel1_u SELECT2 COLEMAK
-#define SEL1_D &sel1_d SELECT2 COLEMAK
-#define SEL1_L &sel1_l SELECT2 COLEMAK
-#define SEL1_R &sel1_r SELECT2 COLEMAK
+#define SEL1_U &sel1_u SELECT2
+#define SEL1_D &sel1_d SELECT2
+#define SEL1_L &sel1_l SELECT2
+#define SEL1_R &sel1_r SELECT2
 
 #define EXT_CAPS &mo_caps EXTEND 0
 #define SYMB_ALTGR &mo_sk SYMBOLS RALT
