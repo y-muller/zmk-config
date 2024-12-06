@@ -300,8 +300,8 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
-  - {type: none}
+  - '&tm_cup'
+  - '&tm_j'
   - '&tm_l'
   - '&tm_u'
   - '&tm_y'
@@ -313,10 +313,10 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - LCTL
   - {type: none}
+  - '&tm_clft'
   - {type: none}
-  - {type: none}
-  - {type: none}
-  - {type: none}
+  - '&tm_crght'
+  - '&tm_m'
   - '&tm_n'
   - '&tm_e'
   - '&tm_i'
@@ -329,7 +329,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
+  - '&tm_cdn'
   - {type: none}
   - '&tm_cm'
   - {type: none}
@@ -337,7 +337,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {type: none}
+  - {t: ▽, type: trans}
   - {type: none}
   - {type: none}
   - {type: held}
