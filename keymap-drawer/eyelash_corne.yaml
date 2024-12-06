@@ -352,7 +352,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - '&sel1_u 8 0'
+  - '&sel1_u 8'
   - {type: none}
   - {type: none}
   - {type: none}
@@ -366,9 +366,9 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - '&sel1_l 8 0'
-  - '&sel1_d 8 0'
-  - '&sel1_r 8 0'
+  - '&sel1_l 8'
+  - '&sel1_d 8'
+  - '&sel1_r 8'
   - {type: none}
   - {type: none}
   - {type: none}
