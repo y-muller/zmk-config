@@ -323,7 +323,7 @@
 
         // Select macros
         select: select_mode {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings =
                 <&macro_param_1to1>,
@@ -334,7 +334,7 @@
                 ;
         };
         sel1_r: select1_right {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_press &kp LCTL>, <&macro_tap &kp RIGHT>, <&macro_tap &kp LEFT>
@@ -344,7 +344,7 @@
                 ;
         };
         sel1_l: select1_left {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_press &kp LCTL>, <&macro_tap &kp LEFT>, <&macro_tap &kp RIGHT>
@@ -354,7 +354,7 @@
                 ;
         };
         sel1_u: select1_up {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_tap &kp END>, <&macro_tap &kp RIGHT>
@@ -364,7 +364,7 @@
                 ;
         };
         sel1_d: select1_down {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_tap &kp HOME>, <&macro_tap &kp HOME>
