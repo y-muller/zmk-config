@@ -367,6 +367,7 @@
                 = <&macro_press &kp LCTL>, <&macro_tap &kp A>, <&macro_release &kp LCTL>
                 , <&macro_tap &kp J>
                 ;
+        };
         tm_m: tmux_m {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
