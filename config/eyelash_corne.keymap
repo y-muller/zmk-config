@@ -623,6 +623,12 @@
             bindings = <&none>, <&bootloader>;
         };
 
+        td_btclr: td_bluetooth_clear {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&none>, <&kp BT_CLR_ALL>;
+        };
+
         td_extcaps: tap_dance_ext_caps {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -1190,9 +1196,9 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
             display-name = "FUNC";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
-            // │      │     │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │BTrst│ BT1 │ BT2 │ BT3 │ BT4 │RESET │
+            // │RESET │     │ F7  │ F8  │ F9  │ F12 │                ┃  ↑  ┃         │BTrst│ BT1 │ BT2 │ BT3 │ BT4 │RESET │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤          ┏━━━━━┃━━━━━┃━━━━━┓   ├─────┼─────┼─────┼─────┼─────┼──────┤
-            // │ BOOT │     │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │     │     │     │     │     │ BOOT │
+            // │ BOOT │     │ F1  │ F2  │ F3  │ F11 │          ┃  ←  ┃enter┃  →  ┃   │ RGB │Bri- │Bri+ │     │     │ BOOT │
             // ├──────┼─────┼─────┼─────┼─────┼─────┤ ┏━━━━┓   ┗━━━━━┃━━━━━┃━━━━━┛   ├─────┼─────┼─────┼─────┼─────┼──────┤
             // │      │     │ F4  │ F5  │ F6  │ F10 │ ┃MUTE┃         ┃  ↓  ┃         │SLEEP│     │     │     │     │      │
             // └──────┴─────┴─────┴───┬─┴───┬─┴───┬─┴─┺━┯━━┛         ┗━━━━━┛     ┌───┴─┬───┴─┬───┴─┬───┴─────┴─────┴──────┘
@@ -1200,7 +1206,7 @@ LOCK_EXT    &kp LC(Z)    &kp LC(X)    &kp LC(C)     &kp LC(V)     &kp LC(Y)  &kp
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&sys_reset  &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &bt BT_CLR_ALL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &sys_reset
+&sys_reset  &none        &kp F7       &kp F8        &kp F9        &kp F12                       &kp UP                 &td_btclr       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &sys_reset
 &td_boot    &none        &kp F1       &kp F2        &kp F3        &kp F11             &kp LEFT  &kp ENTER  &kp RIGHT   &rgb_ug RGB_TOG &rgb_ug RGB_BRD &rgb_ug RGB_BRI        &none        &none        &td_boot
 &none       &none        &kp F4       &kp F5        &kp F6        &kp F10  &kp SPACE            &kp DOWN               &kp C_SLEEP     &none        &none        &none        &none        &none
                                                   &trans   &trans  &trans                                     &trans   &trans  &trans
