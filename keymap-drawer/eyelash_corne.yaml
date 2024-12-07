@@ -108,7 +108,7 @@ layers:
   - {t: '&', h: '&amps_amps', s: '&amps_spaces'}
   - {t: (, h: '&lpar_rpar'}
   - {t: ), h: '&rpar_newline'}
-  - {t: '0', h: '&lbrc_rbrc'}
+  - {t: '{', h: '&lbrc_rbrc', s: '}'}
   - '}'
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
