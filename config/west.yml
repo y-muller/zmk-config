@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: eyelash
       url-base: https://github.com/a741725193
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: petejohanson
@@ -16,5 +18,8 @@ manifest:
     - name: zmk-new_corne
       remote: eyelash
       revision: main
+    - name: zmk-leader-key
+      remote: urob
+      revision: main # or 'legacy' for the original PR version
   self:
     path: config

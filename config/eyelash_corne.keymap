@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <behaviors/leader_key.dtsi>
 
 #include <input/processors.dtsi>
 
@@ -626,7 +627,7 @@
         td_btclr: td_bluetooth_clear {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&none>, <&kp BT_CLR_ALL>;
+            bindings = <&none>, <&bt BT_CLR_ALL>;
         };
 
         td_extcaps: tap_dance_ext_caps {
