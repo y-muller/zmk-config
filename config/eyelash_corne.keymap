@@ -822,7 +822,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&lbrc_rbrc>, <&kp>;
+            bindings = <&lbrc_rbrc>, <&mm_lbrc>;
         };
         mm_lbrc: mm_lbrc {
             compatible = "zmk,behavior-mod-morph";
