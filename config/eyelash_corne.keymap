@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
-#include <behaviors/leader_key.dtsi>
 
 #include <input/processors.dtsi>
 
@@ -89,15 +88,6 @@
 #define LOCK_EXT &llock EXTEND
 #define LOCK_MED &llock MEDIA
 
-/ {
-    leader_sequences {
-        compatible = "zmk,leader-sequences";
-        seq_esc {
-            key-positions = <0 1>;
-            bindings = <&kp X>;
-        };
-    };
-};
 
 / {
     macros {
@@ -563,6 +553,12 @@
     };
 
     behaviors {
+        leader: leader {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+            l_x { sequence = <N E>; bindings = <&kp X>; };
+        };
+
         hrl: home_row_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
