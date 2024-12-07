@@ -236,10 +236,15 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp RPAR &kp SEMI &kp ENTER>;
         };
-        lbrc_rbrc: lbrc_rbrc {
+        brc_lri: braces_left_right_inside {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LBRC &kp RBRC &kp LEFT>;
+        };
+        brc_lr: braces_left_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LBRC &kp RBRC>;
         };
         lbkt_rbkt: lbkt_rbkt {
             compatible = "zmk,behavior-macro";
@@ -822,7 +827,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&lbrc_rbrc>, <&mm_lbrc>;
+            bindings = <&brc_lri>, <&mm_lbrc>;
         };
         mm_lbrc: mm_lbrc {
             compatible = "zmk,behavior-mod-morph";
@@ -833,8 +838,8 @@
         td_brc: tap_dance_braces {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp LBRC>, <&kp RBRC>;
+            tapping-term-ms = <250>;
+            bindings = <&kp LBRC>, <&brc_lr>;
         };
         ht_lbkt: ht_lbkt {
             compatible = "zmk,behavior-hold-tap";

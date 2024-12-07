@@ -17,10 +17,10 @@ screens that are compatible with the nice!view.
 I am using this [module](https://github.com/a741725193/zmk-new_corne).
 
 ##### What is missing or broken so far
-- tmux mode (Ctrl-A prefix)
-- select mode
-- Alt-Tab on Nav layer
-- leader key
+- no Alt-Tab on Nav layer
+- the SELECT mode is not as polished as in QMK. Releasing the SELECT key returns to the base layer even if the EXTEND layer key is still pressed
+- the `tmux` mode (Ctrl-A prefix) is replaced by a layer and is not as flexible or complete
+- leader key is not implemented
 - layer locking is rather awkward (symbols, extend, media)
 - the keymap-drawer config is completely broken
 
