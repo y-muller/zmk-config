@@ -551,20 +551,19 @@
         };
 
         // Leader key macros
-        lk_ccomment: leader_c_comment {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp TILDE &kp SLASH>;
-        };
+//        lk_ccomment: leader_c_comment {
+//            compatible = "zmk,behavior-macro";
+//            #binding-cells = <0>;
+//            bindings = <&macro_tap &kp TILDE &kp SLASH>;
+//        };
 
-        
     };
 
     behaviors {
         leader: leader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
+            l_ccomment { sequence = <C C>; bindings = <&equal_equal>; };
         };
 
         hrl: home_row_left {
