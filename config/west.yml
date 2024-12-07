@@ -20,6 +20,6 @@ manifest:
       revision: main
     - name: zmk-leader-key
       remote: urob
-      revision: v0.1 # 'main' or 'legacy' for the original PR version
+      revision: main # 'main' or 'legacy' for the original PR version
   self:
     path: config
