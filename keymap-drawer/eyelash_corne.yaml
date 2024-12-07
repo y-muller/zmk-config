@@ -252,7 +252,7 @@ layers:
   - F9
   - F12
   - $$mdi:arrow-up-bold$$
-  - BT CLR ALL
+  - '&td_btclr'
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
