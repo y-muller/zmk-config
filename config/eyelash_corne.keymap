@@ -824,6 +824,12 @@
             tapping-term-ms = <280>;
             bindings = <&lbrc_rbrc>, <&kp>;
         };
+        mm_lbrc: mm_lbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         ht_lbkt: ht_lbkt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -1117,7 +1123,7 @@ LCTRL_LGUI &kp Z        &kp X        &kp C         &kp D         &kp V      &kp 
             //                        └─────┴─────┴─────┘                        └─────┴─────┴─────┘
 
             bindings = <
-&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &ht_rpar 0 RPAR &ht_lbrc 0 LBRC &kp RBRC    &kp BSPC
+&kp X      &ht_gt 0 0    &kp N7       &kp N8        &kp N9        &at_caret                        &kp UP                 &ht_amps 0 0 &ht_lpar 0 LPAR &ht_rpar 0 RPAR  &ht_lbrc 0 0 &kp RBRC    &kp BSPC
 &kp TAB    &hrl_dot LGUI 0 &hrl LALT N1 &hrl LSHFT N2 &hrl LCTRL N3 &ht_hash 0 HASH      &kp LEFT  &kp ENTER  &kp RIGHT   &ht_equl 0 0 &hrr LCTRL MINUS &hrr LSHFT PLUS &hrr_slsh LALT 0 &hrr_star LGUI 0 &kp ENTER
 LOCK_SYM   &ht_lt 0 0    &kp N4       &kp N5        &kp N6        &dlr_prc    &kp SPACE            &kp DOWN               &ht_excl 0 0 &kp UNDER     &ht_lbkt 0 LBKT    &kp RBKT     &ht_pipe 0 0 &kp RGUI
                                                   &trans  &mt LSHIFT N0 &trans                                   &trans  &trans  &trans
