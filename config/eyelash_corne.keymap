@@ -563,7 +563,7 @@
         leader: leader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            l_ccomment { sequence = <C C>; bindings = <&equal_equal>; };
+            l_ccomment { sequence = <C C>; bindings = <&kp Z>; };
         };
 
         hrl: home_row_left {
