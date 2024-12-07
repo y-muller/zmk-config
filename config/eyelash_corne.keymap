@@ -549,6 +549,17 @@
                 , <&macro_release &kp LCTL>
                 ;
         };
+
+        // Leader key macros
+        lk_ccomment: leader_c_comment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SLASH &kp STAR &kp SPC &kp SPC &kp STAR &kp SLASH>
+                , <&macro_tap &kp LEFT &kp LEFT &kp LEFT>
+                ;
+        };
+
         
     };
 
@@ -556,7 +567,7 @@
         leader: leader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            l_x { sequence = <N E>; bindings = <&kp X>; };
+            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
         };
 
         hrl: home_row_left {
