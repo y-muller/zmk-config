@@ -827,8 +827,14 @@
         mm_lbrc: mm_lbrc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LBRC>, <&kp RBRC>;
+            bindings = <&td_brc>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        td_brc: tap_dance_braces {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
         };
         ht_lbkt: ht_lbkt {
             compatible = "zmk,behavior-hold-tap";
