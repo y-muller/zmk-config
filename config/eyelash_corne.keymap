@@ -554,9 +554,7 @@
         lk_ccomment: leader_c_comment {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp SLASH &kp STAR &kp SPC &kp SPC &kp STAR &kp SLASH>
-                , <&macro_tap &kp LEFT &kp LEFT &kp LEFT>
+            bindings = <&macro_tap &kp TILDE &kp SLASH>;
                 ;
         };
 
