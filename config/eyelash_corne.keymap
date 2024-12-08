@@ -607,7 +607,7 @@
             l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
             l_cinclude { sequence = <C I>; bindings = <&lk_cinclude>; };
             l_cincludeqts { sequence = <C I I>; bindings = <&lk_cinclude_qts>; };
-            l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
+            l_cdefine { sequence = <C D>; bindings = <&lk_cdefine>; };
             l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
             l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
             l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };

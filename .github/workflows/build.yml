@@ -1,5 +1,14 @@
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
+  private:
+    name: Decrypt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decrypt private macros
+        run: ./private_macros.sh
+        env:
+          PRIVATE_PASSPHRASE: ${{ secrets.PRIVATE_PASSPHRASE }}
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
