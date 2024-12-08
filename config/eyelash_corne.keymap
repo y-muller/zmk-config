@@ -601,19 +601,19 @@
     };
 
     behaviors {
-        leader: leader {
-            compatible = "zmk,behavior-leader-key";
-            #binding-cells = <0>;
-            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
-            l_cinclude { sequence = <C I>; bindings = <&lk_cinclude>; };
-            l_cincludeqts { sequence = <C I I>; bindings = <&lk_cinclude_qts>; };
-            l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
-            l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
-            l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
-            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
-            //l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
-            //l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
-        };
+//        leader: leader {
+//            compatible = "zmk,behavior-leader-key";
+//            #binding-cells = <0>;
+//            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
+//            l_cinclude { sequence = <C I>; bindings = <&lk_cinclude>; };
+//            l_cincludeqts { sequence = <C I I>; bindings = <&lk_cinclude_qts>; };
+//            l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
+//            l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
+//            l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
+//            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
+//            //l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
+//            //l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
+//        };
 
         hrl: home_row_left {
             compatible = "zmk,behavior-hold-tap";
@@ -1014,7 +1014,7 @@
         };
         combo_minus {
             timeout-ms = <50>;
-            key-positions = <22 23>;
+            key-positions = <8 23>;
             bindings = <&kp MINUS>;
             layers = <COLEMAK>;
         };
@@ -1064,31 +1064,31 @@
             timeout-ms = <50>;
             key-positions = <30 31>;
             bindings = <&kp LC(C)>;
-            layers = <COLEMAK>;
+            //layers = <COLEMAK>;
         };
         combo_paste {
             timeout-ms = <50>;
             key-positions = <31 32>;
             bindings = <&kp LC(V)>;
-            layers = <COLEMAK>;
+            //layers = <COLEMAK>;
         };
         combo_cut {
             timeout-ms = <50>;
             key-positions = <30 32>;
             bindings = <&kp LC(X)>;
-            layers = <COLEMAK>;
+            //layers = <COLEMAK>;
         };
         combo_undo {
             timeout-ms = <50>;
             key-positions = <29 30>;
             bindings = <&kp LC(Z)>;
-            layers = <COLEMAK>;
+            //layers = <COLEMAK>;
         };
         combo_redo {
             timeout-ms = <50>;
             key-positions = <32 33>;
             bindings = <&kp LC(Y)>;
-            layers = <COLEMAK>;
+            //layers = <COLEMAK>;
         };
         combo_vimcmd {
             timeout-ms = <50>;
