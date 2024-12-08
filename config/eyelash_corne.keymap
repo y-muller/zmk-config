@@ -88,6 +88,7 @@
 #define LOCK_EXT &llock EXTEND
 #define LOCK_MED &llock MEDIA
 
+#include "private_macros.dtsi"
 
 / {
     macros {
@@ -551,19 +552,25 @@
         };
 
         // Leader key macros
-//        lk_ccomment: leader_c_comment {
-//            compatible = "zmk,behavior-macro";
-//            #binding-cells = <0>;
-//            bindings = <&macro_tap &kp TILDE &kp SLASH>;
-//        };
+        lk_ccomment: leader_c_comment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SLASH &kp STAR &kp SPC &kp SPC &kp STAR &kp SLASH>
+                , <&macro_tap &kp LEFT &kp LEFT &kp LEFT>
+                ;
+        };
 
+        
     };
 
     behaviors {
         leader: leader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            l_ccomment { sequence = <C C>; bindings = <&amps_amps>; };
+            l_ccomment { sequence = <C C>; bindings = <&kp lk_ccomment>; };
+            l_priv_cemail { sequence = <X X>; bindings = <&kp priv_cemail>; };
+            l_priv_comb { sequence = <X C>; bindings = <&kp priv_comp>; };
         };
 
         hrl: home_row_left {
