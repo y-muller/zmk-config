@@ -610,7 +610,6 @@
             l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
             l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
             l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
-            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
             //l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
             //l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
         };
