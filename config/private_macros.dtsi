@@ -13,5 +13,5 @@
             bindings = 
                 <&macro_tap &kp C &kp O &kp B &kp M &kp P>;
         };
-   };
+    };
 };

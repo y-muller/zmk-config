@@ -569,8 +569,8 @@
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
             l_ccomment { sequence = <C C>; bindings = <&kp lk_ccomment>; };
-            l_priv_cemail { sequence = <X X>; bindings = <&kp priv_cemail>; };
-            l_priv_comb { sequence = <X C>; bindings = <&kp priv_comp>; };
+            //l_priv_cemail { sequence = <X X>; bindings = <&kp priv_cemail>; };
+            //l_priv_comb { sequence = <X C>; bindings = <&kp priv_comp>; };
         };
 
         hrl: home_row_left {

@@ -4,6 +4,7 @@
     <File Name="README.md"/>
   </VirtualDirectory>
   <VirtualDirectory Name="config">
+    <File Name="config/private_macros.dtsi"/>
     <File Name="config/eyelash_corne.json"/>
     <File Name="keymap_drawer.config.yaml"/>
     <File Name="config/west.yml"/>
