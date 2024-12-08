@@ -93,24 +93,6 @@
 / {
     macros {
         // Single Alt-tab to swap to the previous window instead of cycling through
-        priv_cemail: priv_cemail {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_tap &kp A &kp AT &kp B &kp DOT &kp C>;
-        };
-        priv_comp: priv_comp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_tap &kp C &kp O &kp B &kp M &kp P>;
-        };
-    };
-};
-
-/ {
-    macros {
-        // Single Alt-tab to swap to the previous window instead of cycling through
         prv_wnd: previous_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -578,6 +560,42 @@
                 , <&macro_tap &kp LEFT &kp LEFT &kp LEFT>
                 ;
         };
+        lk_cinclude: leader_c_include {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp HASH &kp I &kp N &kp C &kp L &kp U &kp D &kp E &kp SPC>
+                ;
+        };
+        lk_cinclude_qts: leader_c_include_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp HASH &kp I &kp N &kp C &kp L &kp U &kp D &kp E &kp SPC>
+                , <&macro_tap &kp DQT &kp DQT &kp LEFT>
+                ;
+        };
+        lk_cdefine: leader_c_define {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp HASH &kp D &kp E &kp F &kp I &kp N &kp E &kp SPC>
+                ;
+        };
+        lk_cstring: leader_c_string {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp S &kp T &kp D &kp COL &kp COL &kp S &kp T &kp R &kp I &kp N &kp G>
+                ;
+        };
+        lk_cvector: leader_c_vector {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp S &kp T &kp D &kp COL &kp COL &kp V &kp E &kp C &kp T &kp O &kp R>
+                ;
+        };
 
         
     };
@@ -586,9 +604,15 @@
         leader: leader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            l_ccomment { sequence = <C C>; bindings = <&kp lk_ccomment>; };
-            //l_priv_cemail { sequence = <X X>; bindings = <&kp priv_cemail>; };
-            //l_priv_comb { sequence = <X C>; bindings = <&kp priv_comp>; };
+            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
+            l_cinclude { sequence = <C I>; bindings = <&lk_cinclude>; };
+            l_cincludeqts { sequence = <C I I>; bindings = <&lk_cinclude_qts>; };
+            l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
+            l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
+            l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
+            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
+            //l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
+            //l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
         };
 
         hrl: home_row_left {
