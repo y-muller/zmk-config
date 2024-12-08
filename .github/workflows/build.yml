@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Decrypt private macros
-        run: ./private_macros.sh
+        run: ./private_data.sh
         env:
           PRIVATE_PASSPHRASE: ${{ secrets.PRIVATE_PASSPHRASE }}
   build:
