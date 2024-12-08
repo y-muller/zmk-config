@@ -88,7 +88,7 @@
 #define LOCK_EXT &llock EXTEND
 #define LOCK_MED &llock MEDIA
 
-//#include "private_macros.dtsi"
+#include "private_macros.dtsi"
 
 / {
     macros {
@@ -610,8 +610,8 @@
             l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
             l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
             l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
-            //l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
-            //l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
+            l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
+            l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
         };
 
         hrl: home_row_left {
