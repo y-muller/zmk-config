@@ -586,14 +586,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp S &kp T &kp D &kp COL &kp COL &kp S &kp T &kp R &kp I &kp N &kp G>
+                = <&macro_tap &kp S &kp T &kp D &kp COLON &kp COLON &kp S &kp T &kp R &kp I &kp N &kp G>
                 ;
         };
         lk_cvector: leader_c_vector {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp S &kp T &kp D &kp COL &kp COL &kp V &kp E &kp C &kp T &kp O &kp R>
+                = <&macro_tap &kp S &kp T &kp D &kp COLON &kp COLON &kp V &kp E &kp C &kp T &kp O &kp R>
                 ;
         };
 
@@ -601,19 +601,19 @@
     };
 
     behaviors {
-//        leader: leader {
-//            compatible = "zmk,behavior-leader-key";
-//            #binding-cells = <0>;
-//            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
-//            l_cinclude { sequence = <C I>; bindings = <&lk_cinclude>; };
-//            l_cincludeqts { sequence = <C I I>; bindings = <&lk_cinclude_qts>; };
-//            l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
-//            l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
-//            l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
-//            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
-//            //l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
-//            //l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
-//        };
+        leader: leader {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
+            l_cinclude { sequence = <C I>; bindings = <&lk_cinclude>; };
+            l_cincludeqts { sequence = <C I I>; bindings = <&lk_cinclude_qts>; };
+            l_cdefine { sequence = <C D>; bindings = <&lk_ccomment>; };
+            l_cstring { sequence = <C S>; bindings = <&lk_cstring>; };
+            l_cvector { sequence = <C V>; bindings = <&lk_cvector>; };
+            l_ccomment { sequence = <C C>; bindings = <&lk_ccomment>; };
+            //l_priv_cemail { sequence = <X X>; bindings = <&priv_cemail>; };
+            //l_priv_comb { sequence = <X C>; bindings = <&priv_comp>; };
+        };
 
         hrl: home_row_left {
             compatible = "zmk,behavior-hold-tap";
