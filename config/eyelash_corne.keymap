@@ -88,7 +88,25 @@
 #define LOCK_EXT &llock EXTEND
 #define LOCK_MED &llock MEDIA
 
-#include "private_macros.dtsi"
+//#include "private_macros.dtsi"
+
+/ {
+    macros {
+        // Single Alt-tab to swap to the previous window instead of cycling through
+        priv_cemail: priv_cemail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_tap &kp A &kp AT &kp B &kp DOT &kp C>;
+        };
+        priv_comp: priv_comp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_tap &kp C &kp O &kp B &kp M &kp P>;
+        };
+    };
+};
 
 / {
     macros {
@@ -1110,7 +1128,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "COLEMAK";
+            display-name = "COLEMK";
 
             // ┌──────┬─────┬─────┬─────┬─────┬─────┐                ┏━━━━━┓         ┌─────┬─────┬─────┬─────┬─────┬──────┐
             // │MD/ESC│  Q  │  W  │  F  │  P  │  B  │                ┃  ↑  ┃         │  J  │  L  │  U  │  Y  │  ;  │ BKSP │
